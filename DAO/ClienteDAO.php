@@ -15,15 +15,15 @@ class ClienteDAO{
 		return ($consulta->fetchAll(PDO::FETCH_ASSOC));
 	}
 
-	public function logar($login, $senha){
+	public function logar($user, $pass){
 
 		include("conexao.php");
 		$sql = 'SELECT * FROM cliente WHERE login = :login and senha = :senha';
 		$consulta = $conexao->prepare($sql);
-		$consulta->bindValue(":login",$login);
-		$consulta->bindValue(":senha",$senha);
+		$consulta->bindValue(":login",$user);
+		$consulta->bindValue(":senha",$pass);
 		$consulta->execute();
-		return ($consulta->fetchAll(PDO::FETCH_ASSOC));
+		return ($consulta->fetch(PDO::FETCH_ASSOC));
 
 	}
 

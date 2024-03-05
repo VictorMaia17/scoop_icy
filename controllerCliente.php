@@ -2,14 +2,16 @@
 
 require_once ("include_dao.php");
 
-$botao = isset($_GET['botao']) ? $_GET['botao'] : "";
+$botao = isset($_POST['botao']) ? $_POST['botao'] : "";
 
 $cliente = new Cliente();
 $clienteDAO = new ClienteDAO();
 
+$usuarios = $clienteDAO->listarTodos();
+
 if($botao == "enviar"){
-	$login = isset($_GET['login']) ? $_GET['login'] : "";
-	$senha = isset($_GET['senha']) ? $_GET['senha'] : "";
+	$login = isset($_POST['login']) ? $_POST['login'] : "";
+	$senha = isset($_POST['senha']) ? $_POST['senha'] : "";
 
 	$resultado = $clienteDAO->logar($login, $senha);
 
@@ -19,17 +21,19 @@ if($botao == "enviar"){
 	else{
 		session_start();
 		$_SESSION['usuario'] = $login;
-		echo("Deu certo!!!");
+		header("location:logado.php");
 	}
 }
 
 else if($botao == "cadastrar"){
 	
-	$login = isset($_GET['login']) ? $_GET['login'] : "";
-	$senha = isset($_GET['senha']) ? $_GET['senha'] : "";
+	$nome = isset($_POST['nome']) ? $_POST['nome'] : "";
+	$email = isset($_POST['email']) ? $_POST['email'] : "";
+	$rua = isset($_POST['rua']) ? $_POST['rua'] : "";
+	$telefone = isset($_POST['telefone']) ? $_POST['telefone'] : "";
 
-	$usuarioModel->setLogin($login);
-	$usuarioModel->setLogin($senha);
+	$cliente->setNome($login);
+	$cliente->setLogin($senha);
 	$resultado = $usuarioDAO->cadastrar($usuarioModel);
 
 }

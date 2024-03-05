@@ -21,7 +21,7 @@ require_once("controllerCliente.php");
         <div class="center">
           <img src="http://placehold.it/250x100&text=Logo" alt="logo"> 
         </div>
-        <form style="" class="login-form" id="UserLoginForm" method="get" accept-charset="utf-8">
+        <form style="" class="login-form" id="UserLoginForm" method="POST" accept-charset="utf-8">
           <div class="control-group">
             <div class="input-prepend">
               <span class="add-on"><i class="icon-user"></i></span>
