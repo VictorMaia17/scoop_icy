@@ -273,11 +273,11 @@ $(document).ready(function(){
 			<div class="table-title">
 				<div class="row">
 					<div class="col-sm-6">
-						<h2>Manage <b>gerenciar</b></h2>
+						<h2>Gerenciar <b>clientes</b></h2>
 					</div>
 					<div class="col-sm-6">
-						<a href="#addgerenciarModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New gerenciar</span></a>
-						<a href="#deletegerenciarModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
+						<a href="#addgerenciarModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Adicionar novo cliente</span></a>
+						<a href="#deletegerenciarModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>deletar</span></a>						
 					</div>
 				</div>
 			</div>
@@ -291,24 +291,25 @@ $(document).ready(function(){
 							</span>
 
 						</th>
-						<th>Nome</th>
-                        <th>rg</th>
-                        <th>cpf</th>
-                        <th>email</th>
-                        <th>telefone</th>
-						<th>senha</th>
-						<th>login</th>
-						<th>rua</th>
-						<th>numero</th>
-                        <th>bairro</th>
-                        <th>cidade</th>
-                        <th>complemento</th>
+						  <th>cod</th>
+						  <th>Nome</th>
+              <th>numero</th>
+              <th>rua</th>
+              <th>telefone</th>
+              <th>bairro</th>
+						  <th>cidade</th>
+					  	<th>email</th>
+				  		<th>senha</th>
+					  	<th>rg</th>
+              <th>cpf</th>
+              <th>complemento</th>
+              <th>login</th>
                        
 
 					</tr>
 				</thead>
 				<tbody>
-                    <?php foreach($usuarios as $usuario){ ?>
+           <?php foreach($usuarios as $usuario){ ?>
 
 					<tr>
 						<td>
@@ -317,37 +318,38 @@ $(document).ready(function(){
 								<label for="checkbox1"></label>
 							</span>
 						</td>
+						<td><?=$usuario['cod']?></td>
 						<td><?=$usuario['nome']?></td>
-						<td><?=$usuario['rg']?></td>
-						<td><?=$usuario['cpf']?></td>
-						<td><?=$usuario['email']?></td>
-                        <td><?=$usuario['email']?></td>
-                        <td><?=$usuario['email']?></td>
-                        <td><?=$usuario['email']?></td>
-                        <td><?=$usuario['email']?></td>
-                        <td><?=$usuario['email']?></td>
-                        <td><?=$usuario['email']?></td>
-                        <td><?=$usuario['email']?></td>
-                        <td><?=$usuario['email']?></td>
+						<td><?=$usuario['numero']?></td>
+						<td><?=$usuario['rua']?></td>
+						<td><?=$usuario['telefone']?></td>
+            <td><?=$usuario['bairro']?></td>
+            <td><?=$usuario['cidade']?></td>
+            <td><?=$usuario['email']?></td>
+            <td><?=$usuario['senha']?></td>
+            <td><?=$usuario['rg']?></td>
+            <td><?=$usuario['cpf']?></td>
+            <td><?=$usuario['complemento']?></td>
+            <td><?=$usuario['login']?></td>
 
 							<a href="#editgerenciarModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
 							<a href="#deletegerenciarModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
 						</td>
 					</tr>
 
-                    <?php }?>
+          <?php }?>
 				</tbody>
 			</table>
 			<div class="clearfix">
-				<div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+				<div class="hint-text">Mostrando <b>5</b> de <b>25</b> entradas</div>
 				<ul class="pagination">
-					<li class="page-item disabled"><a href="#">Previous</a></li>
+					<li class="page-item disabled"><a href="#">Anterior</a></li>
 					<li class="page-item"><a href="#" class="page-link">1</a></li>
 					<li class="page-item"><a href="#" class="page-link">2</a></li>
 					<li class="page-item active"><a href="#" class="page-link">3</a></li>
 					<li class="page-item"><a href="#" class="page-link">4</a></li>
 					<li class="page-item"><a href="#" class="page-link">5</a></li>
-					<li class="page-item"><a href="#" class="page-link">Next</a></li>
+					<li class="page-item"><a href="#" class="page-link">Próximo</a></li>
 				</ul>
 			</div>
 		</div>
@@ -359,29 +361,74 @@ $(document).ready(function(){
 		<div class="modal-content">
 			<form method="post">
 				<div class="modal-header">						
-					<h4 class="modal-title">Add gerenciar</h4>
+					<h4 class="modal-title">Adicionar cliente</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				</div>
-				<div class="modal-body">					
+				<div class="modal-body">	
+				
 					<div class="form-group">
 						<label>Nome</label>
 						<input type="text" class="form-control" required name="nome">
 					</div>
+					
 					<div class="form-group">
+						<label>Numero</label>
+						<input type="numero" class="form-control" required name="numero">
+					</div>
+					
+					<div class="form-group">
+						<label>rua</label>
+						<textarea class="form-control" required name="rua"></textarea>
+					</div>
+					
+					<div class="form-group">
+						<label>Telefone</label>
+						<input type="tel" class="form-control" required name="telefone">
+					</div>
+					
+          <div class="form-group">
+						<label>Bairro</label>
+						<input type="text" class="form-control" required name="bairo">
+					</div>
+					
+				<div class="form-group">
+						<label>Cidade</label>
+						<input type="text" class="form-control" required name="cidade">
+					</div>
+					
+				<div class="form-group">
 						<label>Email</label>
 						<input type="email" class="form-control" required name="email">
 					</div>
-					<div class="form-group">
-						<label>rua/label>
-						<textarea class="form-control" required name="rua"></textarea>
+					
+				<div class="form-group">
+						<label>Senha</label>
+						<input type="password" class="form-control" required name="password">
 					</div>
+					
+        <div class="form-group">
+						<label>Rg</label>
+						<input type="number" class="form-control" required name="rg">
+					</div>
+					
 					<div class="form-group">
-						<label>Telefone</label>
-						<input type="text" class="form-control" required name="telefone">
-					</div>					
+						<label>Cpf</label>
+						<input type="number" class="form-control" required name="cpf">
+					</div>
+					
+					<div class="form-group">
+						<label>complemento</label>
+						<input type="text" class="form-control" required name="complemento">
+					</div>
+					
+					<div class="form-group">
+						<label>Login</label>
+						<input type="text" class="form-control" required name="login">
+					</div>
+					
 				</div>
 				<div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
 					<input type="submit" class="btn btn-success" value="cadastrar" name="botao" >
 				</div>
 			</form>
@@ -416,7 +463,7 @@ $(document).ready(function(){
 					</div>					
 				</div>
 				<div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
 					<input type="submit" class="btn btn-info" value="Save">
 				</div>
 			</form>
@@ -429,16 +476,16 @@ $(document).ready(function(){
 		<div class="modal-content">
 			<form>
 				<div class="modal-header">						
-					<h4 class="modal-title">Delete gerenciar</h4>
+					<h4 class="modal-title">Deletar cliente</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				</div>
 				<div class="modal-body">					
-					<p>Are you sure you want to delete these Records?</p>
-					<p class="text-warning"><small>This action cannot be undone.</small></p>
+					<p>Tem certeza de que deseja excluir esses registros?</p>
+					<p class="text-warning"><small>Essa ação não pode ser desfeita.</small></p>
 				</div>
 				<div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-					<input type="submit" class="btn btn-danger" value="Delete">
+					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+					<input type="submit" class="btn btn-danger" value="Deletar">
 				</div>
 			</form>
 		</div>

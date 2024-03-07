@@ -28,13 +28,34 @@ if($botao == "enviar"){
 else if($botao == "cadastrar"){
 	
 	$nome = isset($_POST['nome']) ? $_POST['nome'] : "";
-	$email = isset($_POST['email']) ? $_POST['email'] : "";
+	$numero = isset($_POST['numero']) ? $_POST['numero'] : "";
 	$rua = isset($_POST['rua']) ? $_POST['rua'] : "";
 	$telefone = isset($_POST['telefone']) ? $_POST['telefone'] : "";
+	$bairro = isset($_POST['bairro']) ? $_POST['bairro'] : "";
+  $cidade = isset($_POST['cidade']) ? $_POST['cidade'] : "";
+  $email = isset($_POST['email']) ? $_POST['email'] : "";
+  $senha = isset($_POST['senha']) ? $_POST['senha'] : "";
+  $rg = isset($_POST['rg']) ? $_POST['rg'] : "";
+  $cpf = isset($_POST['cpf']) ? $_POST['cpf'] : "";
+  $complemento = isset($_POST['complemento']) ? $_POST['complemento'] : "";
+  $login = isset($_POST['login']) ? $_POST['login'] : "";
 
-	$cliente->setNome($login);
-	$cliente->setLogin($senha);
-	$resultado = $usuarioDAO->cadastrar($usuarioModel);
+	$cliente->setNome($nome);
+	$cliente->setNumero($numero);
+	$cliente->setRua($rua);
+  $cliente->setTelefone($telefone);
+  $cliente->setBairro($bairro);
+  $cliente->setCidade($cidade);
+  $cliente->setEmail($email);
+  $cliente->setSenha($senha);
+  $cliente->setRg($rg);
+  $cliente->setCpf($cpf);
+  $cliente->setComplemento($complemento);
+  $cliente->setLogin($login);
+	
+	
+	$resultado = $clienteDAO->inserir($cliente);
+	header("location:gerenciar.php");
 
 }
 
