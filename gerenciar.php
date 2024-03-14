@@ -323,14 +323,14 @@ $(document).ready(function(){
 						<td><?=$usuario['numero']?></td>
 						<td><?=$usuario['rua']?></td>
 						<td><?=$usuario['telefone']?></td>
-            <td><?=$usuario['bairro']?></td>
-            <td><?=$usuario['cidade']?></td>
-            <td><?=$usuario['email']?></td>
-            <td><?=$usuario['senha']?></td>
-            <td><?=$usuario['rg']?></td>
-            <td><?=$usuario['cpf']?></td>
-            <td><?=$usuario['complemento']?></td>
-            <td><?=$usuario['login']?></td>
+           			    <td><?=$usuario['bairro']?></td>
+            			<td><?=$usuario['cidade']?></td>
+            			<td><?=$usuario['email']?></td>
+            			<td><?=$usuario['senha']?></td>
+            			<td><?=$usuario['rg']?></td>
+            			<td><?=$usuario['cpf']?></td>
+            			<td><?=$usuario['complemento']?></td>
+            			<td><?=$usuario['login']?></td>
 
 							<a href="#editgerenciarModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
 							<a href="#deletegerenciarModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
