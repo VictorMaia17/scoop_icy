@@ -10,17 +10,17 @@ $clienteDAO = new ClienteDAO();
 $usuarios = $clienteDAO->listarTodos();
 
 if($botao == "enviar"){
-	$login = isset($_POST['login']) ? $_POST['login'] : "";
-	$senha = isset($_POST['senha']) ? $_POST['senha'] : "";
+	$email = isset($_POST['email']) ? $_POST['email'] : "";
+	$password = isset($_POST['password']) ? $_POST['password'] : "";
 
-	$resultado = $clienteDAO->logar($login, $senha);
+	$resultado = $clienteDAO->logar($email, $password);
 
 	if($resultado == false){
-		print("Login ou senha INCORRETO!");
+		print("Email ou senha INCORRETO!");
 	}
 	else{
 		session_start();
-		$_SESSION['usuario'] = $login;
+		$_SESSION['usuario'] = $email;
 		header("location:logado.php");
 	}
 }
@@ -32,26 +32,26 @@ else if($botao == "cadastrar"){
 	$rua = isset($_POST['rua']) ? $_POST['rua'] : "";
 	$telefone = isset($_POST['telefone']) ? $_POST['telefone'] : "";
 	$bairro = isset($_POST['bairro']) ? $_POST['bairro'] : "";
-  $cidade = isset($_POST['cidade']) ? $_POST['cidade'] : "";
-  $email = isset($_POST['email']) ? $_POST['email'] : "";
-  $senha = isset($_POST['senha']) ? $_POST['senha'] : "";
-  $rg = isset($_POST['rg']) ? $_POST['rg'] : "";
-  $cpf = isset($_POST['cpf']) ? $_POST['cpf'] : "";
-  $complemento = isset($_POST['complemento']) ? $_POST['complemento'] : "";
-  $login = isset($_POST['login']) ? $_POST['login'] : "";
+  	$cidade = isset($_POST['cidade']) ? $_POST['cidade'] : "";
+  	$email = isset($_POST['email']) ? $_POST['email'] : "";
+  	$password = isset($_POST['password']) ? $_POST['password'] : "";
+  	$rg = isset($_POST['rg']) ? $_POST['rg'] : "";
+  	$cpf = isset($_POST['cpf']) ? $_POST['cpf'] : "";
+  	$complemento = isset($_POST['complemento']) ? $_POST['complemento'] : "";
+  	$login = isset($_POST['login']) ? $_POST['login'] : "";
 
 	$cliente->setNome($nome);
 	$cliente->setNumero($numero);
 	$cliente->setRua($rua);
-  $cliente->setTelefone($telefone);
-  $cliente->setBairro($bairro);
-  $cliente->setCidade($cidade);
-  $cliente->setEmail($email);
-  $cliente->setSenha($senha);
-  $cliente->setRg($rg);
-  $cliente->setCpf($cpf);
-  $cliente->setComplemento($complemento);
-  $cliente->setLogin($login);
+  	$cliente->setTelefone($telefone);
+  	$cliente->setBairro($bairro);
+  	$cliente->setCidade($cidade);
+  	$cliente->setEmail($email);
+  	$cliente->setSenha($password);
+  	$cliente->setRg($rg);
+  	$cliente->setCpf($cpf);
+  	$cliente->setComplemento($complemento);
+  	$cliente->setLogin($login);
 	
 	
 	$resultado = $clienteDAO->inserir($cliente);

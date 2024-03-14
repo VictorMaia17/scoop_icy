@@ -25,13 +25,13 @@ require_once("controllerCliente.php");
           <div class="control-group">
             <div class="input-prepend">
               <span class="add-on"><i class="icon-user"></i></span>
-              <input name="login" required="required" placeholder="login" maxlength="255" type="text" id="idNome"> 
+              <input name="email" required="required" placeholder="email" maxlength="255" type="text" id="idEmail"> 
             </div>
           </div>
           <div class="control-group">
             <div class="input-prepend">
               <span class="add-on"><i class="icon-lock"></i></span>
-              <input name="senha" required="required" placeholder="senha" type="password" id="idSenha"> 
+              <input name="password" required="required" placeholder="senha" type="password" id="idSenha"> 
             </div>
           </div>
           <div class="control-group">

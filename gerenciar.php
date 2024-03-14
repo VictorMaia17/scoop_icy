@@ -388,7 +388,7 @@ $(document).ready(function(){
 					
           <div class="form-group">
 						<label>Bairro</label>
-						<input type="text" class="form-control" required name="bairo">
+						<input type="text" class="form-control" required name="bairro">
 					</div>
 					
 				<div class="form-group">
@@ -408,12 +408,12 @@ $(document).ready(function(){
 					
         <div class="form-group">
 						<label>Rg</label>
-						<input type="number" class="form-control" required name="rg">
+						<input type="text" class="form-control" required name="rg">
 					</div>
 					
 					<div class="form-group">
 						<label>Cpf</label>
-						<input type="number" class="form-control" required name="cpf">
+						<input type="text" class="form-control" required name="cpf">
 					</div>
 					
 					<div class="form-group">

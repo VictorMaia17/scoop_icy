@@ -18,9 +18,9 @@ class ClienteDAO{
 	public function logar($user, $pass){
 
 		include("conexao.php");
-		$sql = 'SELECT * FROM cliente WHERE login = :login and senha = :senha';
+		$sql = 'SELECT * FROM cliente WHERE email = :email and senha = :senha';
 		$consulta = $conexao->prepare($sql);
-		$consulta->bindValue(":login",$user);
+		$consulta->bindValue(":email",$user);
 		$consulta->bindValue(":senha",$pass);
 		$consulta->execute();
 		return ($consulta->fetch(PDO::FETCH_ASSOC));
