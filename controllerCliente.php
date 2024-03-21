@@ -7,7 +7,7 @@ $botao = isset($_POST['botao']) ? $_POST['botao'] : "";
 $cliente = new Cliente();
 $clienteDAO = new ClienteDAO();
 
-$usuarios = $clienteDAO->listarTodos();
+$clientes = $clienteDAO->listarTodos();
 
 if($botao == "enviar"){
 	$email = isset($_POST['email']) ? $_POST['email'] : "";

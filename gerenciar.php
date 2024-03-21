@@ -14,6 +14,7 @@ require_once("controllerCliente.php");
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="editar.js"></script>
 <style>
 body {
 	color: #566787;
@@ -281,7 +282,7 @@ $(document).ready(function(){
 					</div>
 				</div>
 			</div>
-			<table class="table table-striped table-hover">
+			<table class="table table-striped table-hover table-responsive">
 				<thead>
 					<tr>
 						<th>
@@ -289,27 +290,25 @@ $(document).ready(function(){
 								<input type="checkbox" id="selectAll">
 								<label for="selectAll"></label>
 							</span>
-
 						</th>
-						  <th>cod</th>
-						  <th>Nome</th>
-              <th>numero</th>
-              <th>rua</th>
-              <th>telefone</th>
-              <th>bairro</th>
-						  <th>cidade</th>
-					  	<th>email</th>
-				  		<th>senha</th>
-					  	<th>rg</th>
-              <th>cpf</th>
-              <th>complemento</th>
-              <th>login</th>
-                       
-
+						<th>Cod</th>
+						<th>Nome</th>
+					    <th>Numero</th>
+						<th>Rua</th>
+						<th>Telefone</th>
+						<th>Bairro</th>
+						<th>Cidade</th>
+						<th>Rg</th>
+						<th>Cpf</th>
+						<th>Complemento</th>
+						<th>Login</th>		
+						<th>Email</th>
+						<th>Senha</th>	
+						<th>Ações</th>
 					</tr>
 				</thead>
 				<tbody>
-           <?php foreach($usuarios as $usuario){ ?>
+           <?php foreach($clientes as $cliente){ ?>
 
 					<tr>
 						<td>
@@ -318,22 +317,24 @@ $(document).ready(function(){
 								<label for="checkbox1"></label>
 							</span>
 						</td>
-						<td><?=$usuario['cod']?></td>
-						<td><?=$usuario['nome']?></td>
-						<td><?=$usuario['numero']?></td>
-						<td><?=$usuario['rua']?></td>
-						<td><?=$usuario['telefone']?></td>
-           			    <td><?=$usuario['bairro']?></td>
-            			<td><?=$usuario['cidade']?></td>
-            			<td><?=$usuario['email']?></td>
-            			<td><?=$usuario['senha']?></td>
-            			<td><?=$usuario['rg']?></td>
-            			<td><?=$usuario['cpf']?></td>
-            			<td><?=$usuario['complemento']?></td>
-            			<td><?=$usuario['login']?></td>
-
-							<a href="#editgerenciarModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+						<td><?=$cliente['cod']?></td>
+						<td><?=$cliente['nome']?></td>
+						<td><?=$cliente['numero']?></td>
+						<td><?=$cliente['rua']?></td>
+						<td><?=$cliente['telefone']?></td>
+           			    <td><?=$cliente['bairro']?></td>
+            			<td><?=$cliente['cidade']?></td>
+            			<td><?=$cliente['rg']?></td>
+            			<td><?=$cliente['cpf']?></td>
+            			<td><?=$cliente['complemento']?></td>
+            			<td><?=$cliente['login']?></td>
+            			<td><?=$cliente['email']?></td>
+            			<td><?=$cliente['senha']?></td>
+						<td>
+						
+							<a href="#editgerenciarModal" class="edit" data-toggle="modal" onclick="editarcliente(<?=$cliente['nome']?>)"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>		
 							<a href="#deletegerenciarModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+						
 						</td>
 					</tr>
 
@@ -446,21 +447,57 @@ $(document).ready(function(){
 				</div>
 				<div class="modal-body">					
 					<div class="form-group">
-						<label>Name</label>
-						<input type="text" class="form-control" required>
+						<label>Cod</label>
+						<input type="text" class="form-control" required id="editCod">
+					</div>
+					<div class="form-group">
+						<label>Nome</label>
+						<input type="email" class="form-control" required id="editNome">
+					</div>
+					<div class="form-group">
+						<label>Numero</label>
+						<textarea class="form-control" required id="editNumero"></textarea>
+					</div>
+					<div class="form-group">
+						<label>Rua</label>
+						<input type="text" class="form-control" required id="editRua">
+					</div>		
+					<div class="form-group">
+						<label>Telefone</label>
+						<input type="text" class="form-control" required id="editTelefone">
+					</div>
+					<div class="form-group">
+						<label>Bairro</label>
+						<input type="text" class="form-control" required id="editBairro">
+					</div>
+					<div class="form-group">
+						<label>Cidade</label>
+						<input type="text" class="form-control" required id="editCidade">
 					</div>
 					<div class="form-group">
 						<label>Email</label>
-						<input type="email" class="form-control" required>
+						<input type="text" class="form-control" required id="editEmail">
 					</div>
 					<div class="form-group">
-						<label>Address</label>
-						<textarea class="form-control" required></textarea>
+						<label>Senha</label>
+						<input type="text" class="form-control" required id="editSenha">
 					</div>
 					<div class="form-group">
-						<label>Phone</label>
-						<input type="text" class="form-control" required>
-					</div>					
+						<label>Rg</label>
+						<input type="text" class="form-control" required id="editRg">
+					</div>
+					<div class="form-group">
+						<label>Cpf</label>
+						<input type="text" class="form-control" required id="editCpf">
+					</div>
+					<div class="form-group">
+						<label>Complemento</label>
+						<input type="text" class="form-control" required id="editComplemento">
+					</div>
+					<div class="form-group">
+						<label>Login</label>
+						<input type="text" class="form-control" required id="editLogin">
+					</div>			
 				</div>
 				<div class="modal-footer">
 					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
