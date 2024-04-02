@@ -57,6 +57,12 @@ else if($botao == "cadastrar"){
 	$resultado = $clienteDAO->inserir($cliente);
 	header("location:gerenciar.php");
 
+<<<<<<< Updated upstream
+=======
+	else if($botao == "editar")
+		 
+
+>>>>>>> Stashed changes
 }
 
 ?>

@@ -332,7 +332,11 @@ $(document).ready(function(){
             			<td><?=$cliente['senha']?></td>
 						<td>
 						
+<<<<<<< Updated upstream
 							<a href="#editgerenciarModal" class="edit" data-toggle="modal" onclick="editarcliente(<?=$cliente['nome']?>)"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>		
+=======
+							<a href="#editgerenciarModal" class="edit" data-toggle="modal" onclick="editarCliente('<?=$cliente['cod']?>', '<?=$cliente['nome']?>', '<?=$cliente['numero']?>', '<?=$cliente['rua']?>', '<?=$cliente['telefone']?>', '<?=$cliente['bairro']?>', '<?=$cliente['cidade']?>', '<?=$cliente['rg']?>', '<?=$cliente['cpf']?>', '<?=$cliente['complemento']?>', '<?=$cliente['login']?>', '<?=$cliente['email']?>', '<?=$cliente['senha']?>')"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>		
+>>>>>>> Stashed changes
 							<a href="#deletegerenciarModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
 						
 						</td>
@@ -440,7 +444,11 @@ $(document).ready(function(){
 <div id="editgerenciarModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
+<<<<<<< Updated upstream
 			<form>
+=======
+			<form method = "post">
+>>>>>>> Stashed changes
 				<div class="modal-header">						
 					<h4 class="modal-title">Edit gerenciar</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -448,7 +456,11 @@ $(document).ready(function(){
 				<div class="modal-body">					
 					<div class="form-group">
 						<label>Cod</label>
+<<<<<<< Updated upstream
 						<input type="text" class="form-control" required id="editCod">
+=======
+						<input type="hidden" class="form-control" required id="editCod" name="">
+>>>>>>> Stashed changes
 					</div>
 					<div class="form-group">
 						<label>Nome</label>
@@ -501,7 +513,11 @@ $(document).ready(function(){
 				</div>
 				<div class="modal-footer">
 					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+<<<<<<< Updated upstream
 					<input type="submit" class="btn btn-info" value="Save">
+=======
+					<input type="submit" class="btn btn-info" value="editar" name = "botao">
+>>>>>>> Stashed changes
 				</div>
 			</form>
 		</div>
