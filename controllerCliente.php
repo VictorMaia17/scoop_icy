@@ -95,4 +95,10 @@ else if($botao == "editar"){
 
 }
 
+else if($botao == "Deletar"){
+	$cod = isset($_POST['cod']) ? $_POST['cod'] : "";
+	$clienteDAO->deletar($cod);
+	header("location:gerenciar.php");
+}
+
 ?>

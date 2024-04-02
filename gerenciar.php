@@ -320,7 +320,7 @@ $(document).ready(function(){
 						<td>
 						
 						<a href="#editgerenciarModal" class="edit" data-toggle="modal" onclick="editarCliente('<?=$cliente['cod']?>', '<?=$cliente['nome']?>', '<?=$cliente['numero']?>', '<?=$cliente['rua']?>', '<?=$cliente['telefone']?>', '<?=$cliente['bairro']?>', '<?=$cliente['cidade']?>', '<?=$cliente['rg']?>', '<?=$cliente['cpf']?>', '<?=$cliente['complemento']?>', '<?=$cliente['login']?>', '<?=$cliente['email']?>', '<?=$cliente['senha']?>')"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>	
-							<a href="#deletegerenciarModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+							<a href="#deletegerenciarModal" class="delete" data-toggle="modal" onclick="excluirCliente('<?=$cliente['cod']?>')"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
 						
 						</td>
 					</tr>
@@ -495,7 +495,8 @@ $(document).ready(function(){
 <div id="deletegerenciarModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form>
+			<form method="POST"> 
+				<input name="cod" id="excluirCod" type="hidden"></input>
 				<div class="modal-header">						
 					<h4 class="modal-title">Deletar cliente</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
