@@ -14,7 +14,7 @@ require_once("controllerCliente.php");
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<script src="editar.js"></script>
+<script src="gerenciar.js"></script>
 <style>
 body {
 	color: #566787;
@@ -277,20 +277,13 @@ $(document).ready(function(){
 						<h2>Gerenciar <b>clientes</b></h2>
 					</div>
 					<div class="col-sm-6">
-						<a href="#addgerenciarModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Adicionar novo cliente</span></a>
-						<a href="#deletegerenciarModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>deletar</span></a>						
+						<a href="#addgerenciarModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Adicionar novo cliente</span></a>	
 					</div>
 				</div>
 			</div>
 			<table class="table table-striped table-hover table-responsive">
 				<thead>
 					<tr>
-						<th>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="selectAll">
-								<label for="selectAll"></label>
-							</span>
-						</th>
 						<th>Cod</th>
 						<th>Nome</th>
 					    <th>Numero</th>
@@ -311,12 +304,6 @@ $(document).ready(function(){
            <?php foreach($clientes as $cliente){ ?>
 
 					<tr>
-						<td>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="checkbox1" name="options[]" value="1">
-								<label for="checkbox1"></label>
-							</span>
-						</td>
 						<td><?=$cliente['cod']?></td>
 						<td><?=$cliente['nome']?></td>
 						<td><?=$cliente['numero']?></td>
@@ -332,7 +319,7 @@ $(document).ready(function(){
             			<td><?=$cliente['senha']?></td>
 						<td>
 						
-							<a href="#editgerenciarModal" class="edit" data-toggle="modal" onclick="editarcliente(<?=$cliente['nome']?>)"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>		
+						<a href="#editgerenciarModal" class="edit" data-toggle="modal" onclick="editarCliente('<?=$cliente['cod']?>', '<?=$cliente['nome']?>', '<?=$cliente['numero']?>', '<?=$cliente['rua']?>', '<?=$cliente['telefone']?>', '<?=$cliente['bairro']?>', '<?=$cliente['cidade']?>', '<?=$cliente['rg']?>', '<?=$cliente['cpf']?>', '<?=$cliente['complemento']?>', '<?=$cliente['login']?>', '<?=$cliente['email']?>', '<?=$cliente['senha']?>')"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>	
 							<a href="#deletegerenciarModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
 						
 						</td>
@@ -440,68 +427,65 @@ $(document).ready(function(){
 <div id="editgerenciarModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form>
+			<form method="POST">
 				<div class="modal-header">						
 					<h4 class="modal-title">Edit gerenciar</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				</div>
 				<div class="modal-body">					
-					<div class="form-group">
-						<label>Cod</label>
-						<input type="text" class="form-control" required id="editCod">
-					</div>
+					<input type="hidden" class="form-control" required id="editCod" name="cod">
 					<div class="form-group">
 						<label>Nome</label>
-						<input type="email" class="form-control" required id="editNome">
+						<input type="text" class="form-control" required id="editNome" name="nome">
 					</div>
 					<div class="form-group">
 						<label>Numero</label>
-						<textarea class="form-control" required id="editNumero"></textarea>
+						<textarea class="form-control" required id="editNumero" name="numero"></textarea>
 					</div>
 					<div class="form-group">
 						<label>Rua</label>
-						<input type="text" class="form-control" required id="editRua">
+						<input type="text" class="form-control" required id="editRua" name="rua">
 					</div>		
 					<div class="form-group">
 						<label>Telefone</label>
-						<input type="text" class="form-control" required id="editTelefone">
+						<input type="text" class="form-control" required id="editTelefone" name="telefone">
 					</div>
 					<div class="form-group">
 						<label>Bairro</label>
-						<input type="text" class="form-control" required id="editBairro">
+						<input type="text" class="form-control" required id="editBairro" name="bairro">
 					</div>
 					<div class="form-group">
 						<label>Cidade</label>
-						<input type="text" class="form-control" required id="editCidade">
+						<input type="text" class="form-control" required id="editCidade" name="cidade">
 					</div>
 					<div class="form-group">
 						<label>Email</label>
-						<input type="text" class="form-control" required id="editEmail">
+						<input type="text" class="form-control" required id="editEmail" name="email">
 					</div>
 					<div class="form-group">
 						<label>Senha</label>
-						<input type="text" class="form-control" required id="editSenha">
+						<input type="text" class="form-control" required id="editSenha" name="password">
 					</div>
 					<div class="form-group">
 						<label>Rg</label>
-						<input type="text" class="form-control" required id="editRg">
+						<input type="text" class="form-control" required id="editRg" name="rg">
 					</div>
 					<div class="form-group">
 						<label>Cpf</label>
-						<input type="text" class="form-control" required id="editCpf">
+						<input type="text" class="form-control" required id="editCpf" name="cpf">
 					</div>
 					<div class="form-group">
 						<label>Complemento</label>
-						<input type="text" class="form-control" required id="editComplemento">
+						<input type="text" class="form-control" required id="editComplemento" name="complemento">
 					</div>
 					<div class="form-group">
 						<label>Login</label>
-						<input type="text" class="form-control" required id="editLogin">
+						<input type="text" class="form-control" required id="editLogin" name="login">
 					</div>			
 				</div>
 				<div class="modal-footer">
 					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-					<input type="submit" class="btn btn-info" value="Save">
+					<input type="submit" class="btn btn-info" value="editar" name="botao">
 				</div>
 			</form>
 		</div>
@@ -522,7 +506,7 @@ $(document).ready(function(){
 				</div>
 				<div class="modal-footer">
 					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-					<input type="submit" class="btn btn-danger" value="Deletar">
+					<input type="submit" class="btn btn-danger" value="Deletar" name = "botao">
 				</div>
 			</form>
 		</div>
