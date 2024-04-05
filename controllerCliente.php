@@ -3,7 +3,7 @@
 require_once ("include_dao.php");
 
 $botao = isset($_POST['botao']) ? $_POST['botao'] : "";
-
+$pesquisa = isset($_GET['pesquisa']) ?  $_GET['pesquisa'] : "";
 $cliente = new Cliente();
 $clienteDAO = new ClienteDAO();
 
@@ -101,4 +101,15 @@ else if($botao == "Deletar"){
 	header("location:gerenciar.php");
 }
 
+
+	IF (empty($pesquisa)){
+	$cliente = $clienteDAO->listartodos();
+
+	}			
+
+	else{
+	$cliente = $clienteDAO->pesquisar($pesquisa);
+
+	}
+	
 ?>

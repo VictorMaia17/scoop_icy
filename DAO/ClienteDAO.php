@@ -5,6 +5,18 @@
 	   
 class ClienteDAO{
 
+	//pesquisa um elemento
+	public function pesquisar ($pesquisa){
+
+		include ("conexao.php");
+		$sql = 'SELECT * FROM cliente WHERE nome LIKE :pesquisa';
+		$consulta = $conexao->prepare($sql);
+		$pesquisa = "%". $pesquisa . "%";
+		$consulta->bindvalue(":pesquisa",$pesquisa);
+		$consulta->execute();
+		return ($consulta->fetchAll(PDO::FETCH_ASSOC));
+		}
+
 	//Carrega um elemento pela chave primária
 	public function carregar($cod){
 		include("conexao.php");

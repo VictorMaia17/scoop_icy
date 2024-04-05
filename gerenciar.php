@@ -281,6 +281,18 @@ $(document).ready(function(){
 					</div>
 				</div>
 			</div>
+			<div class="row">
+				<form method="GET" class="col-12 mb-2">
+					<div class="input-group">
+					     	<input class="form-control py-2" type="search" name="pesquisa" placeholder="Pesquisar usuários" value="" id="example-search-input">
+					      	<span class="input-group-append">
+					        	<button class="btn btn-outline-secondary" type="submit" name="botao" value="pesquisar">
+					            	<i class="fa fa-search"></i>
+					        	</button>
+					      	</span>
+					</div>
+		        </form>
+			</div>
 			<table class="table table-striped table-hover table-responsive">
 				<thead>
 					<tr>
@@ -304,6 +316,9 @@ $(document).ready(function(){
            <?php foreach($clientes as $cliente){ ?>
 
 					<tr>
+						<td class="align-items-center">
+							<img src="semFoto.jpg" class="rounded-circle" style="height: 100px; width: 100px;">
+						</td>
 						<td><?=$cliente['cod']?></td>
 						<td><?=$cliente['nome']?></td>
 						<td><?=$cliente['numero']?></td>
@@ -353,7 +368,15 @@ $(document).ready(function(){
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				</div>
 				<div class="modal-body">	
-				
+					<div class="form-group">	
+						<label>Foto</label>
+						<div class="input-group mb-3">
+							<div class="custom-file">
+							    <input type="file" class="custom-file-input" id="inputGroupFile01" name="foto">
+							    <label class="custom-file-label" for="inputGroupFile02">Escolha uma foto</label>
+							</div>
+						</div>	
+					</div>
 					<div class="form-group">
 						<label>Nome</label>
 						<input type="text" class="form-control" required name="nome">
@@ -430,6 +453,9 @@ $(document).ready(function(){
 			<form method="POST">
 				<div class="modal-header">						
 					<h4 class="modal-title">Edit gerenciar</h4>
+					<div class="form-group d-flex justify-content-center">
+						<img src="semFoto.jpg" class="rounded-circle" style="height: 100px; width: 100px;">		
+					</div>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				</div>
 				<div class="modal-body">					
@@ -481,6 +507,15 @@ $(document).ready(function(){
 					<div class="form-group">
 						<label>Login</label>
 						<input type="text" class="form-control" required id="editLogin" name="login">
+					</div>
+					<div class="form-group">	
+						<label>Foto</label>
+						<div class="input-group mb-3">
+							<div class="custom-file">
+							    <input type="file" class="custom-file-input" id="inputGroupFile01" name="foto">
+							    <label class="custom-file-label" for="inputGroupFile02">Escolha uma foto</label>
+							</div>
+						</div>	
 					</div>			
 				</div>
 				<div class="modal-footer">
