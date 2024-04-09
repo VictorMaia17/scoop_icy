@@ -362,7 +362,7 @@ $(document).ready(function(){
 <div id="addgerenciarModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form method="post">
+			<form method="POST" enctype="multipart/form-data">
 				<div class="modal-header">						
 					<h4 class="modal-title">Adicionar cliente</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>

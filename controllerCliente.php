@@ -26,7 +26,23 @@ if($botao == "enviar"){
 }
 
 else if($botao == "cadastrar"){
+
+	$foto = isset($_FILES['foto']) ? $_FILES['foto'] : "";
+
+	if(!empty($foto)){
+
+		$name = explode(".", $foto[name]);
+
+		if ($name[1] == "jpg" || $name[1] == "png" || $name[1] == "jpeg"){
+			
+			$novoNome = "cliente-".md5(time()*rand()).".".$name[1];
+			var_dump($novoNome);
+		}
 	
+	}
+	else{
+
+	}
 	$nome = isset($_POST['nome']) ? $_POST['nome'] : "";
 	$numero = isset($_POST['numero']) ? $_POST['numero'] : "";
 	$rua = isset($_POST['rua']) ? $_POST['rua'] : "";
@@ -55,7 +71,7 @@ else if($botao == "cadastrar"){
 	
 	
 	$resultado = $clienteDAO->inserir($cliente);
-	header("location:gerenciar.php");
+	//header("location:gerenciar.php");
 
 }
 
