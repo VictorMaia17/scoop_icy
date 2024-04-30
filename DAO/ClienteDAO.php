@@ -72,7 +72,7 @@ class ClienteDAO{
 	//Insere um elemento na tabela
 	public function inserir($cliente){
 		include("conexao.php");
-		$sql = 'INSERT INTO cliente (cod, nome, rg, cpf, email, telefone, senha, login, rua, numero, bairro, cidade, complemento) VALUES (:cod, :nome, :rg, :cpf, :email, :telefone, :senha, :login, :rua, :numero, :bairro, :cidade, :complemento)';
+		$sql = 'INSERT INTO cliente (cod, nome, rg, cpf, email, telefone, senha, login, rua, numero, bairro, cidade, complemento, fotos) VALUES (:cod, :nome, :rg, :cpf, :email, :telefone, :senha, :login, :rua, :numero, :bairro, :cidade, :complemento, :fotos)';
 		$consulta = $conexao->prepare($sql);
 		$consulta->bindValue(':cod',$cliente->getCod()); 
 
@@ -98,7 +98,9 @@ class ClienteDAO{
 
 		$consulta->bindValue(':cidade',$cliente->getCidade()); 
 
-		$consulta->bindValue(':complemento',$cliente->getComplemento()); 
+		$consulta->bindValue(':complemento',$cliente->getComplemento());
+		
+		$consulta->bindValue(':fotos',$cliente->getFotos());
 		if($consulta->execute())
 			return true;
 		else
@@ -108,7 +110,7 @@ class ClienteDAO{
 	//Atualiza um elemento na tabela
 	public function atualizar($cliente){
 		include("conexao.php");
-		$sql = 'UPDATE cliente SET cod = :cod, nome = :nome, rg = :rg, cpf = :cpf, email = :email, telefone = :telefone, senha = :senha, login = :login, rua = :rua, numero = :numero, bairro = :bairro, cidade = :cidade, complemento = :complemento WHERE cod = :cod';
+		$sql = 'UPDATE cliente SET cod = :cod, nome = :nome, rg = :rg, cpf = :cpf, email = :email, telefone = :telefone, senha = :senha, login = :login, rua = :rua, numero = :numero, bairro = :bairro, cidade = :cidade, complemento = :complemento, fotos = :fotos WHERE cod = :cod';
 		$consulta = $conexao->prepare($sql);
 		$consulta->bindValue(':cod',$cliente->getCod()); 
 
@@ -135,6 +137,8 @@ class ClienteDAO{
 		$consulta->bindValue(':cidade',$cliente->getCidade()); 
 
 		$consulta->bindValue(':complemento',$cliente->getComplemento()); 
+
+		$consulta->bindValue(':fotos',$cliente->getFotos());
 		if($consulta->execute())
 			return true;
 		else

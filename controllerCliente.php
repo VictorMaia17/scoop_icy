@@ -36,7 +36,9 @@ else if($botao == "cadastrar"){
 		if ($name[1] == "jpg" || $name[1] == "png" || $name[1] == "jpeg"){
 			
 			$novoNome = "cliente-".md5(time()*rand()).".".$name[1];
-			var_dump($novoNome);
+			$destino = "clientes_img/$novoNome";
+			move_uploaded_file($foto["tmp_name"], $destino);
+			//var_dump($foto);
 		}
 	
 	}
@@ -56,6 +58,7 @@ else if($botao == "cadastrar"){
   	$complemento = isset($_POST['complemento']) ? $_POST['complemento'] : "";
   	$login = isset($_POST['login']) ? $_POST['login'] : "";
 
+	$cliente->setFotos($novoNome);  
 	$cliente->setNome($nome);
 	$cliente->setNumero($numero);
 	$cliente->setRua($rua);
