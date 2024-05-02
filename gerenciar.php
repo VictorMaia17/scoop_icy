@@ -317,7 +317,7 @@ $(document).ready(function(){
 
 					<tr>
 						<td class="align-items-center">
-							<img src="semFoto.jpg" class="rounded-circle" style="height: 100px; width: 100px;">
+							<img src="clientes_img/<?=$cliente['fotos']?>" class="rounded-circle" style="height: 100px; width: 100px;">
 						</td>
 						<td><?=$cliente['cod']?></td>
 						<td><?=$cliente['nome']?></td>
@@ -454,7 +454,7 @@ $(document).ready(function(){
 				<div class="modal-header">						
 					<h4 class="modal-title">Edit gerenciar</h4>
 					<div class="form-group d-flex justify-content-center">
-						<img src="semFoto.jpg" class="rounded-circle" style="height: 100px; width: 100px;">		
+						<img src="clientes_img/<?=$cliente['fotos']?>" class="rounded-circle" style="height: 100px; width: 100px;">		
 					</div>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				</div>

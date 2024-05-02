@@ -7,7 +7,18 @@ $pesquisa = isset($_GET['pesquisa']) ?  $_GET['pesquisa'] : "";
 $cliente = new Cliente();
 $clienteDAO = new ClienteDAO();
 
-$clientes = $clienteDAO->listarTodos();
+
+if (empty($pesquisa)){
+
+	$clientes = $clienteDAO->listartodos();
+
+}			
+
+else{
+
+	$clientes = $clienteDAO->pesquisar($pesquisa);
+
+}
 
 if($botao == "enviar"){
 	$email = isset($_POST['email']) ? $_POST['email'] : "";
@@ -31,7 +42,7 @@ else if($botao == "cadastrar"){
 
 	if(!empty($foto)){
 
-		$name = explode(".", $foto[name]);
+		$name = explode(".", $foto['name']);
 
 		if ($name[1] == "jpg" || $name[1] == "png" || $name[1] == "jpeg"){
 			
@@ -43,7 +54,7 @@ else if($botao == "cadastrar"){
 	
 	}
 	else{
-
+		$novoNome = "semFoto.png";
 	}
 	$nome = isset($_POST['nome']) ? $_POST['nome'] : "";
 	$numero = isset($_POST['numero']) ? $_POST['numero'] : "";
@@ -74,7 +85,7 @@ else if($botao == "cadastrar"){
 	
 	
 	$resultado = $clienteDAO->inserir($cliente);
-	//header("location:gerenciar.php");
+	header("location:gerenciar.php?msg=adicionado");
 
 }
 
@@ -121,14 +132,5 @@ else if($botao == "Deletar"){
 }
 
 
-	IF (empty($pesquisa)){
-	$cliente = $clienteDAO->listartodos();
-
-	}			
-
-	else{
-	$cliente = $clienteDAO->pesquisar($pesquisa);
-
-	}
 	
 ?>
