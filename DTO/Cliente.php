@@ -6,144 +6,85 @@
 	class Cliente{
 		//Atributos
 		private $cod;
-
- 		private $nome;
-
- 		private $rg;
-
- 		private $cpf;
-
- 		private $email;
-
- 		private $telefone;
-
- 		private $senha;
-
- 		private $login;
-
- 		private $rua;
-
- 		private $numero;
-
- 		private $bairro;
-
- 		private $cidade;
-
- 		private $complemento;
-
-		 private $fotos;
- 				
+ 		private $nome;
+ 		private $numero;
+ 		private $rua;
+ 		private $telefone;
+ 		private $bairro;
+ 		private $cidade;
+ 		private $email;
+ 		private $senha;
+ 		private $complemento;
+ 		private $login;
+ 				
 		//Métodos Getters e Setters
 		public function getCod(){
 			return $this->cod;
 		}
-
-		public function getNome(){
+		public function getNome(){
 			return $this->nome;
 		}
-
-		public function getRg(){
-			return $this->rg;
-		}
-
-		public function getCpf(){
-			return $this->cpf;
-		}
-
-		public function getEmail(){
-			return $this->email;
-		}
-
-		public function getTelefone(){
-			return $this->telefone;
-		}
-
-		public function getSenha(){
-			return $this->senha;
-		}
-
-		public function getLogin(){
-			return $this->login;
-		}
-
-		public function getRua(){
-			return $this->rua;
-		}
-
-		public function getNumero(){
+		public function getNumero(){
 			return $this->numero;
 		}
-
-		public function getBairro(){
+		public function getRua(){
+			return $this->rua;
+		}
+		public function getTelefone(){
+			return $this->telefone;
+		}
+		public function getBairro(){
 			return $this->bairro;
 		}
-
-		public function getCidade(){
+		public function getCidade(){
 			return $this->cidade;
 		}
-
-		public function getComplemento(){
+		public function getEmail(){
+			return $this->email;
+		}
+		public function getSenha(){
+			return $this->senha;
+		}
+		public function getComplemento(){
 			return $this->complemento;
 		}
-
-		public function getFotos(){
-			return $this->fotos;
+		public function getLogin(){
+			return $this->login;
 		}
-		
+		
 		public function setCod($cod){
 			$this->cod=$cod;
 		}
-
-		public function setNome($nome){
+		public function setNome($nome){
 			$this->nome=$nome;
 		}
-
-		public function setRg($rg){
-			$this->rg=$rg;
-		}
-
-		public function setCpf($cpf){
-			$this->cpf=$cpf;
-		}
-
-		public function setEmail($email){
-			$this->email=$email;
-		}
-
-		public function setTelefone($telefone){
-			$this->telefone=$telefone;
-		}
-
-		public function setSenha($senha){
-			$this->senha=$senha;
-		}
-
-		public function setLogin($login){
-			$this->login=$login;
-		}
-
-		public function setRua($rua){
-			$this->rua=$rua;
-		}
-
-		public function setNumero($numero){
+		public function setNumero($numero){
 			$this->numero=$numero;
 		}
-
-		public function setBairro($bairro){
+		public function setRua($rua){
+			$this->rua=$rua;
+		}
+		public function setTelefone($telefone){
+			$this->telefone=$telefone;
+		}
+		public function setBairro($bairro){
 			$this->bairro=$bairro;
 		}
-
-		public function setCidade($cidade){
+		public function setCidade($cidade){
 			$this->cidade=$cidade;
 		}
-
-		public function setComplemento($complemento){
-			$this->complemento=$complemento;
-		}	
-
-		public function setFotos($fotos){
-			$this->fotos=$fotos;
+		public function setEmail($email){
+			$this->email=$email;
 		}
+		public function setSenha($senha){
+			$this->senha=$senha;
+		}
+		public function setComplemento($complemento){
+			$this->complemento=$complemento;
+		}
+		public function setLogin($login){
+			$this->login=$login;
+		}
+		
 	}
 ?>
