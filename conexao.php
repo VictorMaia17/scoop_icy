@@ -7,7 +7,7 @@ $senha = "";
 $nomeDoBanco = "scoop_icy";
 
 //banco do tablet
-$servidor2 = '0.0.0.0';
+$servidor2 = 'localhost';
 $usuario2 = 'root';
 $senha2 = 'root';
 $nomeDoBanco2 = 'scoopy';
