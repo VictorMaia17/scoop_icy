@@ -274,10 +274,10 @@ $(document).ready(function(){
 			<div class="table-title">
 				<div class="row">
 					<div class="col-sm-6">
-						<h2>Gerenciar <b>clientes</b></h2>
+						<h2>Gerenciar <b>lojas</b></h2>
 					</div>
 					<div class="col-sm-6">
-						<a href="#addgerenciarModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Adicionar novo cliente</span></a>	
+						<a href="#addgerenciarModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Adicionar novo lojas</span></a>	
 					</div>
 				</div>
 			</div>
@@ -323,26 +323,30 @@ $(document).ready(function(){
 
 					<tr>
 						<td class="align-items-center">
-							<img src="clientes_img/<?=$cliente['fotos']?>" class="rounded-circle" style="height: 100px; width: 100px;">
+							<img src="lojass_img/<?=$lojas['logo']?>" class="rounded-circle" style="height: 100px; width: 100px;">
 						</td>
-						<td><?=$cliente['cod']?></td>
-						<td><?=$cliente['nome']?></td>
-						<td><?=$cliente['cnpj']?></td>
-						<td><?=$cliente['email']?></td>
-						<td><?=$cliente['numero']?></td>
-						<td><?=$cliente['rua']?></td>
-						<td><?=$cliente['telefone']?></td>
-           			    <td><?=$cliente['bairro']?></td>
-            			<td><?=$cliente['cidade']?></td>
-            			<td><?=$cliente['rg']?></td>
-            			<td><?=$cliente['cpf']?></td>
-            			<td><?=$cliente['complemento']?></td>
-            			<td><?=$cliente['login']?></td>
-            			<td><?=$cliente['senha']?></td>
-						<td>deus te abençoe cacho jesus te ama 
+						<td><?=$lojas['foto_fundo']?></td>
+						<td><?=$lojas['cod']?></td>
+						<td><?=$lojas['nome']?></td>
+						<td><?=$lojas['cnpj']?></td>
+						<td><?=$lojas['email']?></td>
+						<td><?=$lojas['senha']?></td> 
+						<td><?=$lojas['numero']?></td>
+						<td><?=$lojas['rua']?></td>
+						<td><?=$lojas['bairro']?></td>
+            			<td><?=$lojas['cidade']?></td>
+            			<td><?=$lojas['complemento']?></td>
+            			<td><?=$lojas['login']?></td>
+            			<td><?=$lojas['status']?></td>
+            			<td><?=$lojas['descricao']?></td>
+            			<td><?=$lojas['dias']?></td>
+            			<td><?=$lojas['instagram']?></td>
+            			<td><?=$lojas['facebook']?></td>
+            			<td><?=$lojas['taxa_entrega']?></td>
+						<td><?=$lojas['telefone']?></td>
 						
-						<a href="#editgerenciarModal" class="edit" data-toggle="modal" onclick="editarCliente('<?=$cliente['cod']?>', '<?=$cliente['nome']?>', '<?=$cliente['numero']?>', '<?=$cliente['rua']?>', '<?=$cliente['telefone']?>', '<?=$cliente['bairro']?>', '<?=$cliente['cidade']?>', '<?=$cliente['rg']?>', '<?=$cliente['cpf']?>', '<?=$cliente['complemento']?>', '<?=$cliente['login']?>', '<?=$cliente['email']?>', '<?=$cliente['senha']?>')"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>	
-							<a href="#deletegerenciarModal" class="delete" data-toggle="modal" onclick="excluirCliente('<?=$cliente['cod']?>')"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+						<a href="#editgerenciarModal" class="edit" data-toggle="modal" onclick="editarlojas('<?=$lojas['cod']?>', '<?=$lojas['nome']?>', '<?=$lojas['cnpj']?>', '<?=$lojas['email']?>', '<?=$lojas['senha']?>', '<?=$lojas['numero']?>', '<?=$lojas['rua']?>', '<?=$lojas['bairro']?>', '<?=$lojas['cidade']?>', '<?=$lojas['complemento']?>', '<?=$lojas['login']?>', '<?=$lojas['status']?>', '<?=$lojas['descricao']?>', '<?=$lojas['dias']?>', '<?=$lojas['instagram']?>', '<?=$lojas['facebook']?>', '<?=$lojas['taxa_entrega']?>', '<?=$lojas['telefone']?>')"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>	
+							<a href="#deletegerenciarModal" class="delete" data-toggle="modal" onclick="excluirlojas('<?=$lojas['cod']?>')"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
 						
 						</td>
 					</tr>
@@ -371,7 +375,7 @@ $(document).ready(function(){
 		<div class="modal-content">
 			<form method="POST" enctype="multipart/form-data">
 				<div class="modal-header">						
-					<h4 class="modal-title">Adicionar cliente</h4>
+					<h4 class="modal-title">Adicionar lojas</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				</div>
 				<div class="modal-body">	
@@ -388,7 +392,18 @@ $(document).ready(function(){
 						<label>Nome</label>
 						<input type="text" class="form-control" required name="nome">
 					</div>
-					
+					<div class="form-group">
+						<label>Cnpj</label>
+						<input type="text" class="form-control" required name="cnpj">
+					</div>
+					<div class="form-group">
+						<label>Email</label>
+						<input type="email" class="form-control" required name="email">
+						</div>
+					<div class="form-group">
+						<label>Senha</label>
+						<input type="password" class="form-control" required name="password">
+					</div>
 					<div class="form-group">
 						<label>Numero</label>
 						<input type="numero" class="form-control" required name="numero">
@@ -399,51 +414,53 @@ $(document).ready(function(){
 						<textarea class="form-control" required name="rua"></textarea>
 					</div>
 					
-					<div class="form-group">
-						<label>Telefone</label>
-						<input type="tel" class="form-control" required name="telefone">
-					</div>
 					
-          <div class="form-group">
+					<div class="form-group">
 						<label>Bairro</label>
 						<input type="text" class="form-control" required name="bairro">
 					</div>
 					
-				<div class="form-group">
+					<div class="form-group">
 						<label>Cidade</label>
 						<input type="text" class="form-control" required name="cidade">
 					</div>
-					
-				<div class="form-group">
-						<label>Email</label>
-						<input type="email" class="form-control" required name="email">
-					</div>
-					
-				<div class="form-group">
-						<label>Senha</label>
-						<input type="password" class="form-control" required name="password">
-					</div>
-					
-        <div class="form-group">
-						<label>Rg</label>
-						<input type="text" class="form-control" required name="rg">
-					</div>
-					
 					<div class="form-group">
-						<label>Cpf</label>
-						<input type="text" class="form-control" required name="cpf">
-					</div>
-					
-					<div class="form-group">
-						<label>complemento</label>
+						<label>Complemento</label>
 						<input type="text" class="form-control" required name="complemento">
 					</div>
-					
+						<div class="form-group">
+							<label>Login</label>
+							<input type="text" class="form-control" required name="login">
+						</div>
 					<div class="form-group">
-						<label>Login</label>
-						<input type="text" class="form-control" required name="login">
+						<label>Status</label>
+						<input type="text" class="form-control" required name="status">
+					</div>		
+					<div class="form-group">
+						<label>Descricao</label>
+						<input type="text" class="form-control" required name="descricao">
 					</div>
-					
+					<div class="form-group">
+						<label>Dias</label>
+						<input type="text" class="form-control" required name="dias">
+					</div>
+					<div class="form-group">
+						<label>Instagram</label>
+						<input type="text" class="form-control" required name="instagram">
+					</div>
+					<div class="form-group">
+						<label>Facebook</label>
+						<input type="text" class="form-control" required name="facebook">
+					</div>
+					<div class="form-group">
+						<label>taxa_entrega</label>
+						<input type="text" class="form-control" required name="taxa_entrega">
+					</div>
+		
+					<div class="form-group">
+						<label>Telefone</label>
+						<input type="tel" class="form-control" required name="telefone">
+					</div>
 				</div>
 				<div class="modal-footer">
 					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
@@ -461,7 +478,7 @@ $(document).ready(function(){
 				<div class="modal-header">						
 					<h4 class="modal-title">Edit gerenciar</h4>
 					<div class="form-group d-flex justify-content-center">
-						<img src="clientes_img/<?=$cliente['fotos']?>" class="rounded-circle" style="height: 100px; width: 100px;">		
+						<img src="lojas_img/<?=$lojas['fotos']?>" class="rounded-circle" style="height: 100px; width: 100px;">		
 					</div>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				</div>
@@ -472,24 +489,8 @@ $(document).ready(function(){
 						<input type="text" class="form-control" required id="editNome" name="nome">
 					</div>
 					<div class="form-group">
-						<label>Numero</label>
-						<textarea class="form-control" required id="editNumero" name="numero"></textarea>
-					</div>
-					<div class="form-group">
-						<label>Rua</label>
-						<input type="text" class="form-control" required id="editRua" name="rua">
-					</div>		
-					<div class="form-group">
-						<label>Telefone</label>
-						<input type="text" class="form-control" required id="editTelefone" name="telefone">
-					</div>
-					<div class="form-group">
-						<label>Bairro</label>
-						<input type="text" class="form-control" required id="editBairro" name="bairro">
-					</div>
-					<div class="form-group">
-						<label>Cidade</label>
-						<input type="text" class="form-control" required id="editCidade" name="cidade">
+						<label>Cnpj</label>
+						<input type="text" class="form-control" required id="editCnpj" name="cnpj">
 					</div>
 					<div class="form-group">
 						<label>Email</label>
@@ -500,12 +501,20 @@ $(document).ready(function(){
 						<input type="text" class="form-control" required id="editSenha" name="password">
 					</div>
 					<div class="form-group">
-						<label>Rg</label>
-						<input type="text" class="form-control" required id="editRg" name="rg">
+						<label>Numero</label>
+						<textarea class="form-control" required id="editNumero" name="numero"></textarea>
 					</div>
 					<div class="form-group">
-						<label>Cpf</label>
-						<input type="text" class="form-control" required id="editCpf" name="cpf">
+						<label>Rua</label>
+						<input type="text" class="form-control" required id="editRua" name="rua">
+					</div>		
+					<div class="form-group">
+						<label>Bairro</label>
+						<input type="text" class="form-control" required id="editBairro" name="bairro">
+					</div>
+					<div class="form-group">
+						<label>Cidade</label>
+						<input type="text" class="form-control" required id="editCidade" name="cidade">
 					</div>
 					<div class="form-group">
 						<label>Complemento</label>
@@ -515,11 +524,39 @@ $(document).ready(function(){
 						<label>Login</label>
 						<input type="text" class="form-control" required id="editLogin" name="login">
 					</div>
+					<div class="form-group">
+						<label>status</label>
+						<input type="text" class="form-control" required id="editStatus" name="status">
+					</div>
+					<div class="form-group">
+						<label>descricao</label>
+						<input type="text" class="form-control" required id="editDescricao" name="descricao">
+					</div>
+					<div class="form-group">
+						<label>dias</label>
+						<input type="text" class="form-control" required id="editDias" name="dias">
+					</div>
+					<div class="form-group">
+						<label>instagram</label>
+						<input type="text" class="form-control" required id="editInstagram" name="instagram">
+					</div>
+					<div class="form-group">
+						<label>facebook</label>
+						<input type="text" class="form-control" required id="editFacebook" name="facebook">
+					</div>
+					<div class="form-group">
+						<label>taxa_entrega</label>
+						<input type="text" class="form-control" required id="editTaxa_entrega" name="taxa_entrega">
+					</div>
+					<div class="form-group">
+						<label>Telefone</label>
+						<input type="text" class="form-control" required id="editTelefone" name="telefone">
+					</div>
 					<div class="form-group">	
 						<label>Foto</label>
 						<div class="input-group mb-3">
 							<div class="custom-file">
-							    <input type="file" class="custom-file-input" id="inputGroupFile01" name="foto">
+								<input type="file" class="custom-file-input" id="inputGroupFile01" name="foto">
 							    <label class="custom-file-label" for="inputGroupFile02">Escolha uma foto</label>
 							</div>
 						</div>	
@@ -540,7 +577,7 @@ $(document).ready(function(){
 			<form method="POST"> 
 				<input name="cod" id="excluirCod" type="hidden"></input>
 				<div class="modal-header">						
-					<h4 class="modal-title">Deletar cliente</h4>
+					<h4 class="modal-title">Deletar lojas</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				</div>
 				<div class="modal-body">					

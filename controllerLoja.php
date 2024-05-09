@@ -79,63 +79,80 @@ else if($botao == "cadastrar"){
     $taxa_entrega = isset($_POST['taxa_entrega']) ? $_POST['taxa_entrega'] : "";
 	$telefone = isset($_POST['telefone']) ? $_POST['telefone'] : "";
 
-	$cliente->setFotos($novoNome);  
-	$cliente->setNome($nome);
-	$cliente->setNumero($numero);
-	$cliente->setRua($rua);
-  	$cliente->setTelefone($telefone);
-  	$cliente->setBairro($bairro);
-  	$cliente->setCidade($cidade);
-  	$cliente->setEmail($email);
-  	$cliente->setSenha($password);
-  	$cliente->setRg($rg);
-  	$cliente->setCpf($cpf);
-  	$cliente->setComplemento($complemento);
-  	$cliente->setLogin($login);
+	$loja->setFotos($novoNome);  
+	$loja->setNome($nome);
+	$loja->setCnpj($cnpj);
+	$loja->setEmail($email);
+	$loja->setSenha($password);
+	$loja->setNumero($numero);
+	$loja->setRua($rua);
+	$loja->setBairro($bairro);
+	$loja->setCidade($cidade);
+	$loja->setComplemento($complemento);
+	$loja->setLogin($login);
+	$loja->setStatus($status);
+	$loja->setDescricao($descricao);
+	$loja->setDias($dias);
+	$loja->setInstagram($instagram);
+	$loja->setFacebook($facebook);
+	$loja->setTaxa_entrega($taxa_entrega);
+	$loja->setTelefone($telefone);
 	
 	
-	$resultado = $clienteDAO->inserir($cliente);
+	$resultado = $lojaDAO->inserir($loja);
 	header("location:gerenciar.php?msg=adicionado");
 
 }
 
 else if($botao == "editar"){
 
-	$cod = isset($_POST['cod']) ? $_POST['cod'] : "";
 	$nome = isset($_POST['nome']) ? $_POST['nome'] : "";
+	$cnpj = isset($_POST['cnpj']) ? $_POST['cnpj'] : "";
+    $email = isset($_POST['email']) ? $_POST['email'] : "";
+    $password = isset($_POST['password']) ? $_POST['password'] : "";
 	$numero = isset($_POST['numero']) ? $_POST['numero'] : "";
 	$rua = isset($_POST['rua']) ? $_POST['rua'] : "";
-	$telefone = isset($_POST['telefone']) ? $_POST['telefone'] : "";
 	$bairro = isset($_POST['bairro']) ? $_POST['bairro'] : "";
-  	$cidade = isset($_POST['cidade']) ? $_POST['cidade'] : "";
-  	$email = isset($_POST['email']) ? $_POST['email'] : "";
-  	$password = isset($_POST['password']) ? $_POST['password'] : "";
-  	$rg = isset($_POST['rg']) ? $_POST['rg'] : "";
-  	$cpf = isset($_POST['cpf']) ? $_POST['cpf'] : "";
-  	$complemento = isset($_POST['complemento']) ? $_POST['complemento'] : "";
-  	$login = isset($_POST['login']) ? $_POST['login'] : "";
+    $cidade = isset($_POST['cidade']) ? $_POST['cidade'] : "";
+    $complemento = isset($_POST['complemento']) ? $_POST['complemento'] : "";
+    $login = isset($_POST['login']) ? $_POST['login'] : "";
+    $status = isset($_POST['status']) ? $_POST['status'] : "";
+    $logo = isset($_POST['logo']) ? $_POST['logo'] : "";
+    $foto_fundo = isset($_POST['foto_fundo']) ? $_POST['foto_fundo'] : "";
+    $descricao = isset($_POST['descricao']) ? $_POST['descricao'] : "";
+    $dias = isset($_POST['dias']) ? $_POST['dias'] : "";
+    $instagram = isset($_POST['instagram']) ? $_POST['instagram'] : "";
+    $facebook = isset($_POST['facebook']) ? $_POST['facebook'] : "";
+    $taxa_entrega = isset($_POST['taxa_entrega']) ? $_POST['taxa_entrega'] : "";
+	$telefone = isset($_POST['telefone']) ? $_POST['telefone'] : "";
 
+	$loja->setFotos($novoNome);  
+	$loja->setNome($nome);
+	$loja->setCnpj($cnpj);
+	$loja->setEmail($email);
+	$loja->setSenha($password);
+	$loja->setNumero($numero);
+	$loja->setRua($rua);
+	$loja->setBairro($bairro);
+	$loja->setCidade($cidade);
+	$loja->setComplemento($complemento);
+	$loja->setLogin($login);
+	$loja->setStatus($status);
+	$loja->setDescricao($descricao);
+	$loja->setDias($dias);
+	$loja->setInstagram($instagram);
+	$loja->setFacebook($facebook);
+	$loja->setTaxa_entrega($taxa_entrega);
+	$loja->setTelefone($telefone);
 
-	$cliente->setCod($cod);
-	$cliente->setNome($nome);
-	$cliente->setNumero($numero);
-	$cliente->setRua($rua);
-	$cliente->setTelefone($telefone);
-	$cliente->setBairro($bairro);
-	$cliente->setCidade($cidade);
-	$cliente->setEmail($email);
-	$cliente->setSenha($password);
-	$cliente->setComplemento($complemento);
-	$cliente->setLogin($login);
-
-	$resultado = $clienteDAO->atualizar($cliente);
+	$resultado = $lojaDAO->atualizar($loja);
 	header("location:gerenciar.php");
 
 }
 
 else if($botao == "Deletar"){
 	$cod = isset($_POST['cod']) ? $_POST['cod'] : "";
-	$clienteDAO->deletar($cod);
+	$lojaDAO->deletar($cod);
 	header("location:gerenciar.php");
 }
 
