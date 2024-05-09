@@ -1,5 +1,5 @@
 <?php
-require_once("controllerCliente.php");
+require_once("controllerLoja.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -296,24 +296,30 @@ $(document).ready(function(){
 			<table class="table table-striped table-hover table-responsive">
 				<thead>
 					<tr>
+						<th>logo</th>		
 						<th>Cod</th>
 						<th>Nome</th>
-					    <th>Numero</th>
-						<th>Rua</th>
-						<th>Telefone</th>
-						<th>Bairro</th>
-						<th>Cidade</th>
-						<th>Rg</th>
-						<th>Cpf</th>
-						<th>Complemento</th>
-						<th>Login</th>		
+						<th>Cnpj</th>
 						<th>Email</th>
 						<th>Senha</th>	
-						<th>Ações</th>
+					    <th>Numero</th>
+						<th>Rua</th>
+						<th>Bairro</th>
+						<th>Cidade</th>
+						<th>Complemento</th>
+						<th>Login</th>		
+						<th>status</th>		
+						<th>foto_fundo</th>		
+						<th>descricao</th>		
+						<th>dias</th>		
+						<th>instagram</th>		
+						<th>facebook</th>		
+						<th>taxa_entrega</th>		
+						<th>Telefone</th>
 					</tr>
 				</thead>
 				<tbody>
-           <?php foreach($clientes as $cliente){ ?>
+           <?php foreach($lojas as $loja){ ?>
 
 					<tr>
 						<td class="align-items-center">
@@ -321,6 +327,8 @@ $(document).ready(function(){
 						</td>
 						<td><?=$cliente['cod']?></td>
 						<td><?=$cliente['nome']?></td>
+						<td><?=$cliente['cnpj']?></td>
+						<td><?=$cliente['email']?></td>
 						<td><?=$cliente['numero']?></td>
 						<td><?=$cliente['rua']?></td>
 						<td><?=$cliente['telefone']?></td>
@@ -330,9 +338,8 @@ $(document).ready(function(){
             			<td><?=$cliente['cpf']?></td>
             			<td><?=$cliente['complemento']?></td>
             			<td><?=$cliente['login']?></td>
-            			<td><?=$cliente['email']?></td>
             			<td><?=$cliente['senha']?></td>
-						<td>
+						<td>deus te abençoe cacho jesus te ama 
 						
 						<a href="#editgerenciarModal" class="edit" data-toggle="modal" onclick="editarCliente('<?=$cliente['cod']?>', '<?=$cliente['nome']?>', '<?=$cliente['numero']?>', '<?=$cliente['rua']?>', '<?=$cliente['telefone']?>', '<?=$cliente['bairro']?>', '<?=$cliente['cidade']?>', '<?=$cliente['rg']?>', '<?=$cliente['cpf']?>', '<?=$cliente['complemento']?>', '<?=$cliente['login']?>', '<?=$cliente['email']?>', '<?=$cliente['senha']?>')"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>	
 							<a href="#deletegerenciarModal" class="delete" data-toggle="modal" onclick="excluirCliente('<?=$cliente['cod']?>')"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>

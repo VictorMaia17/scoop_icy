@@ -20,7 +20,9 @@ else{
 
 }
 
-if($botao == "enviar"){
+//login
+
+/*if($botao == "enviar"){
 	$email = isset($_POST['email']) ? $_POST['email'] : "";
 	$password = isset($_POST['password']) ? $_POST['password'] : "";
 
@@ -35,6 +37,7 @@ if($botao == "enviar"){
 		header("location:logado.php");
 	}
 }
+*/
 
 else if($botao == "cadastrar"){
 
