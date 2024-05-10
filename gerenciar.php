@@ -296,6 +296,7 @@ $(document).ready(function(){
 			<table class="table table-striped table-hover table-responsive">
 				<thead>
 					<tr>
+						<th>Foto de fundo</th>		
 						<th>logo</th>		
 						<th>Cod</th>
 						<th>Nome</th>
@@ -322,10 +323,12 @@ $(document).ready(function(){
            <?php foreach($lojas as $loja){ ?>
 
 					<tr>
-						<td class="align-items-center">
-							<img src="lojass_img/<?=$lojas['logo']?>" class="rounded-circle" style="height: 100px; width: 100px;">
+					<td class="align-items-center">
+							<img src="lojas_fundo/<?=$lojas['foto_fundo']?>" class="rounded-circle" style="height: 100px; width: 100px;">
 						</td>
-						<td><?=$lojas['foto_fundo']?></td>
+						<td class="align-items-center">
+							<img src="lojas_img/<?=$lojas['logo']?>" class="rounded-circle" style="height: 100px; width: 100px;">
+						</td>
 						<td><?=$lojas['cod']?></td>
 						<td><?=$lojas['nome']?></td>
 						<td><?=$lojas['cnpj']?></td>
@@ -380,11 +383,20 @@ $(document).ready(function(){
 				</div>
 				<div class="modal-body">	
 					<div class="form-group">	
-						<label>Foto</label>
+						<label>Logo</label>
 						<div class="input-group mb-3">
 							<div class="custom-file">
-							    <input type="file" class="custom-file-input" id="inputGroupFile01" name="foto">
-							    <label class="custom-file-label" for="inputGroupFile02">Escolha uma foto</label>
+							    <input type="file" class="custom-file-input" id="inputGroupFile01" name="logo">
+							    <label class="custom-file-label" for="inputGroupFile02">Adicione a sua logo</label>
+							</div>
+						</div>	
+					</div>
+					<div class="form-group">	
+						<label>Foto de fundo</label>
+						<div class="input-group mb-3">
+							<div class="custom-file">
+							    <input type="file" class="custom-file-input" id="inputGroupFile01" name="foto_fundo">
+							    <label class="custom-file-label" for="inputGroupFile02">Adicione a foto de fundo</label>
 							</div>
 						</div>	
 					</div>
@@ -478,7 +490,7 @@ $(document).ready(function(){
 				<div class="modal-header">						
 					<h4 class="modal-title">Edit gerenciar</h4>
 					<div class="form-group d-flex justify-content-center">
-						<img src="lojas_img/<?=$lojas['fotos']?>" class="rounded-circle" style="height: 100px; width: 100px;">		
+						<img src="lojas_logo/<?=$lojas['fotos']?>" class="rounded-circle" style="height: 100px; width: 100px;">		
 					</div>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				</div>

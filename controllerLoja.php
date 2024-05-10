@@ -39,25 +39,42 @@ else{
 }
 */
 
-else if($botao == "cadastrar"){
+if($botao == "cadastrar"){
 
-	$foto = isset($_FILES['foto']) ? $_FILES['foto'] : "";
+	$logo = isset($_FILES['logo']) ? $_FILES['logo'] : "";
 
-	if(!empty($foto)){
+	if(!empty($logo)){
 
-		$name = explode(".", $foto['name']);
+		$name = explode(".", $logo['name']);
 
 		if ($name[1] == "jpg" || $name[1] == "png" || $name[1] == "jpeg"){
 			
-			$novoNome = "cliente-".md5(time()*rand()).".".$name[1];
-			$destino = "clientes_img/$novoNome";
-			move_uploaded_file($foto["tmp_name"], $destino);
+			$novoNome = "loja-".md5(time()*rand()).".".$name[1];
+			$destino = "lojas_logo/$novoNome";
+			move_uploaded_file($logo["tmp_name"], $destino);
 			//var_dump($foto);
 		}
 	
 	}
+
+	$foto_fundo = isset($_FILES['foto_fundo']) ? $_FILES['foto_fundo'] : "";
+
+	if(!empty($foto_fundo)){
+
+		$name = explode(".", $foto_fundo['name']);
+
+		if ($name[1] == "jpg" || $name[1] == "png" || $name[1] == "jpeg"){
+			
+			$novaFotoFundo = "loja-".md5(time()*rand()).".".$name[1];
+			$destino = "lojas_fundo/$novaFotoFundo";
+			move_uploaded_file($foto_fundo["tmp_name"], $destino);
+			//var_dump($foto);
+		}
+	
+	}
+
 	else{
-		$novoNome = "semFoto.png";
+		$novaFotoFundo = "nada.jpg";
 	}
 	$nome = isset($_POST['nome']) ? $_POST['nome'] : "";
 	$cnpj = isset($_POST['cnpj']) ? $_POST['cnpj'] : "";
@@ -78,8 +95,9 @@ else if($botao == "cadastrar"){
     $facebook = isset($_POST['facebook']) ? $_POST['facebook'] : "";
     $taxa_entrega = isset($_POST['taxa_entrega']) ? $_POST['taxa_entrega'] : "";
 	$telefone = isset($_POST['telefone']) ? $_POST['telefone'] : "";
-
-	$loja->setFotos($novoNome);  
+	
+	$loja->setFoto_fundo($novaFotoFundo);  
+	$loja->setLogo($novoNome);  
 	$loja->setNome($nome);
 	$loja->setCnpj($cnpj);
 	$loja->setEmail($email);
