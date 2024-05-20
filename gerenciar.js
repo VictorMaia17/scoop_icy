@@ -1,4 +1,4 @@
-function editarCliente(cod, nome, cnpj, email, senha, numero, rua, bairro, cidade, complemento, login, status, descricao, dias, instagram, facebook, taxa_entrega, telefone){
+function editarLojas(cod, nome, cnpj, email, senha, numero, rua, bairro, cidade, complemento, login, status, descricao, dias, instagram, facebook, taxa_entrega, telefone){
     document.getElementById("editCod").value = cod;
     document.getElementById("editNome").value = nome;
     document.getElementById("editCnpj").value = cnpj;
@@ -17,7 +17,8 @@ function editarCliente(cod, nome, cnpj, email, senha, numero, rua, bairro, cidad
     document.getElementById("editFacebook").value = facebook;
     document.getElementById("editTaxa_entrega").value = taxa_entrega;
     document.getElementById("editTelefone").value = telefone;
+
 }
-function excluirCliente(cod){
+function excluirLojas(cod){
     document.getElementById("excluirCod").value = cod;
 }

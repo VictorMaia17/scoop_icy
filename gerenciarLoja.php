@@ -309,8 +309,7 @@ $(document).ready(function(){
 						<th>Cidade</th>
 						<th>Complemento</th>
 						<th>Login</th>		
-						<th>status</th>		
-						<th>foto_fundo</th>		
+						<th>status</th>			
 						<th>descricao</th>		
 						<th>dias</th>		
 						<th>instagram</th>		
@@ -324,33 +323,35 @@ $(document).ready(function(){
 
 					<tr>
 					<td class="align-items-center">
-							<img src="lojas_fundo/<?=$lojas['foto_fundo']?>" class="rounded-circle" style="height: 100px; width: 100px;">
+							<img src="lojas_fundo/<?=$loja['foto_fundo']?>" class="rounded-circle" style="height: 100px; width: 100px;">
 						</td>
 						<td class="align-items-center">
-							<img src="lojas_img/<?=$lojas['logo']?>" class="rounded-circle" style="height: 100px; width: 100px;">
+							<img src="lojas_logo/<?=$loja['logo']?>" class="rounded-circle" style="height: 100px; width: 100px;">
 						</td>
-						<td><?=$lojas['cod']?></td>
-						<td><?=$lojas['nome']?></td>
-						<td><?=$lojas['cnpj']?></td>
-						<td><?=$lojas['email']?></td>
-						<td><?=$lojas['senha']?></td> 
-						<td><?=$lojas['numero']?></td>
-						<td><?=$lojas['rua']?></td>
-						<td><?=$lojas['bairro']?></td>
-            			<td><?=$lojas['cidade']?></td>
-            			<td><?=$lojas['complemento']?></td>
-            			<td><?=$lojas['login']?></td>
-            			<td><?=$lojas['status']?></td>
-            			<td><?=$lojas['descricao']?></td>
-            			<td><?=$lojas['dias']?></td>
-            			<td><?=$lojas['instagram']?></td>
-            			<td><?=$lojas['facebook']?></td>
-            			<td><?=$lojas['taxa_entrega']?></td>
-						<td><?=$lojas['telefone']?></td>
+						<td><?=$loja['cod']?></td>
+						<td><?=$loja['nome']?></td>
+						<td><?=$loja['cnpj']?></td>
+						<td><?=$loja['email']?></td>
+						<td><?=$loja['senha']?></td> 
+						<td><?=$loja['numero']?></td> 
+						<td><?=$loja['rua']?></td>
+						<td><?=$loja['bairro']?></td>
+            			<td><?=$loja['cidade']?></td>
+            			<td><?=$loja['complemento']?></td>
+            			<td><?=$loja['login']?></td>
+            			<td><?=$loja['status']?></td>
+            			<td><?=$loja['descricao']?></td>
+            			<td><?=$loja['dias']?></td>
+            			<td><?=$loja['instagram']?></td>
+            			<td><?=$loja['facebook']?></td>
+            			<td><?=$loja['taxa_entrega']?></td>
+						<td><?=$loja['telefone']?></td>
 						
-						<a href="#editgerenciarModal" class="edit" data-toggle="modal" onclick="editarlojas('<?=$lojas['cod']?>', '<?=$lojas['nome']?>', '<?=$lojas['cnpj']?>', '<?=$lojas['email']?>', '<?=$lojas['senha']?>', '<?=$lojas['numero']?>', '<?=$lojas['rua']?>', '<?=$lojas['bairro']?>', '<?=$lojas['cidade']?>', '<?=$lojas['complemento']?>', '<?=$lojas['login']?>', '<?=$lojas['status']?>', '<?=$lojas['descricao']?>', '<?=$lojas['dias']?>', '<?=$lojas['instagram']?>', '<?=$lojas['facebook']?>', '<?=$lojas['taxa_entrega']?>', '<?=$lojas['telefone']?>')"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>	
-							<a href="#deletegerenciarModal" class="delete" data-toggle="modal" onclick="excluirlojas('<?=$lojas['cod']?>')"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-						
+						<td>
+
+							<a href="#editgerenciarModal" class="edit" data-toggle="modal" onclick="editarLojas('<?=$loja['cod']?>', '<?=$loja['nome']?>', '<?=$loja['cnpj']?>', '<?=$loja['email']?>', '<?=$loja['senha']?>', '<?=$loja['numero']?>', '<?=$loja['rua']?>', '<?=$loja['bairro']?>', '<?=$loja['cidade']?>', '<?=$loja['complemento']?>', '<?=$loja['login']?>', '<?=$loja['status']?>', '<?=$loja['descricao']?>', '<?=$loja['dias']?>', '<?=$loja['instagram']?>', '<?=$loja['facebook']?>', '<?=$loja['taxa_entrega']?>', '<?=$loja['telefone']?>')"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>	
+							<a href="#deletegerenciarModal" class="delete" data-toggle="modal" onclick="excluirLojas('<?=$loja['cod']?>')"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+							
 						</td>
 					</tr>
 
@@ -489,9 +490,6 @@ $(document).ready(function(){
 			<form method="POST">
 				<div class="modal-header">						
 					<h4 class="modal-title">Edit gerenciar</h4>
-					<div class="form-group d-flex justify-content-center">
-						<img src="lojas_logo/<?=$lojas['fotos']?>" class="rounded-circle" style="height: 100px; width: 100px;">		
-					</div>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				</div>
 				<div class="modal-body">					
@@ -565,11 +563,26 @@ $(document).ready(function(){
 						<input type="text" class="form-control" required id="editTelefone" name="telefone">
 					</div>
 					<div class="form-group">	
-						<label>Foto</label>
+						<label>Logo</label>
+						<div class="form-group d-flex justify-content-center">
+							<img src="lojas_logo/<?=$loja['logo']?>" class="rounded-circle" style="height: 100px; width: 100px;">		
+						</div>
 						<div class="input-group mb-3">
 							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="inputGroupFile01" name="foto">
-							    <label class="custom-file-label" for="inputGroupFile02">Escolha uma foto</label>
+								<input type="file" class="custom-file-input" id="editLogo" name="foto">
+							    <label class="custom-file-label" for="inputGroupFile02">Altere a logo</label>
+							</div>
+						</div>	
+					</div>			
+					<div class="form-group">	
+						<label>Foto de fundo</label>
+						<div class="form-group d-flex justify-content-center">
+							<img src="lojas_fundo/<?=$loja['foto_fundo']?>" class="rounded-circle" style="height: 100px; width: 100px;">		
+						</div>
+						<div class="input-group mb-3">
+							<div class="custom-file">
+								<input type="file" class="custom-file-input" id="editFotoFundo" name="foto">
+							    <label class="custom-file-label" for="inputGroupFile02">Altere a foto de fundo</label>
 							</div>
 						</div>	
 					</div>			

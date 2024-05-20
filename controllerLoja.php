@@ -5,8 +5,7 @@ require_once ("include_dao.php");
 $botao = isset($_POST['botao']) ? $_POST['botao'] : "";
 $pesquisa = isset($_GET['pesquisa']) ?  $_GET['pesquisa'] : "";
 $loja = new Loja();
-$lojaDAO = new LojaDAO();
-
+$lojaDAO = new LojaDAO();			
 
 if (empty($pesquisa)){
 
@@ -19,7 +18,7 @@ else{
 	$lojas = $lojaDAO->pesquisar($pesquisa);
 
 }
-
+ 
 //login
 
 /*if($botao == "enviar"){
