@@ -2,7 +2,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #0c0c0c;
-  background-color: #3E0128;
+  background-color: #956280; /*cor do site*/
   overflow-x: hidden;
 }
 
@@ -511,7 +511,7 @@ a:focus {
   color: #ffffff;
   border-radius: 15px;
   overflow: hidden;
-  background: linear-gradient(to bottom, #f1f2f3 25px, #222831 25px);
+  background: linear-gradient(to bottom, #f1f2f3 25px, #FDB4D9 25px);  /* cor das caixinhas da loja*/
 }
 
 .food_section .box .img-box {
@@ -616,7 +616,7 @@ a:focus {
 }
 
 .about_section {
-  background: #222831;
+  background: #FDB4D9; /*cor do nos somos scoop icy*/
   color: #ffffff;
 }
 
@@ -788,8 +788,7 @@ a:focus {
 }
 
 .client_section .box .detail-box {
-  background-color: #222831;
-  color: #ffffff;
+  background-color: #476fac; /*cor das caixinhas quem somos nos*/
   padding: 25px 25px 15px 25px;
   border-radius: 5px;
 }
@@ -901,7 +900,7 @@ a:focus {
 
 /* footer section*/
 .footer_section {
-  background-color: #222831;
+  background-color: #784646; /*cor do final do site*/
   color: #ffffff;
   padding: 75px 0 40px 0;
   text-align: center;
