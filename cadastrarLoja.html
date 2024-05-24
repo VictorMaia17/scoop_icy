@@ -187,38 +187,44 @@ require_once("controllerLoja.php");
 
               <div class="input-group mb-3">
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="editFotoFundo" name="">
+                  <input type="file" class="custom-file-input" id="editLogo" name="logo">
                     <label class="custom-file-label" for="inputGroupFile02">Adicione uma logo</label>
                 </div>
               </div>
 
               <div class="input-group mb-3">
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="editFotoFundo" name="">
+                  <input type="file" class="custom-file-input" id="editFotoFundo" name="fotoFundo">
                     <label class="custom-file-label" for="inputGroupFile02">Adicione uma foto de fundo para a página da sua empresa</label>
                 </div>
               </div>
 
               <div>
-                <input type="text" class="form-control" placeholder="Descricão da sua empresa" />
+                <input type="text" class="form-control" placeholder="Descricão da sua empresa" name="descricao"/>
               </div>
  
-              <select></select>
+              <select multiple>
+
+                <option>
+                    a
+                </option>
+ 
+              </select>
  
               <div>
-                <input type="text" class="form-control" placeholder="Link do Instagram da sua empresa" />
-              </div>
- 
-              <div>
-                <input type="text" class="form-control" placeholder="Link do facebook da sua empresa" />
-              </div>
- 
-              <div>
-                <input type="text" class="form-control" placeholder="Taxa de entrega" />
+                <input type="text" class="form-control" placeholder="Link do Instagram da sua empresa" name="instagram"/>
               </div>
  
               <div>
-                <input type="text" class="form-control" placeholder="Telefone para contato" />
+                <input type="text" class="form-control" placeholder="Link do facebook da sua empresa" name="facebook"/>
+              </div>
+ 
+              <div>
+                <input type="text" class="form-control" placeholder="Taxa de entrega" name="taxa_entrega"/>
+              </div>
+ 
+              <div>
+                <input type="text" class="form-control" placeholder="Telefone para contato" name="telefone"/>
               </div>
  
               <div class="btn_box">
