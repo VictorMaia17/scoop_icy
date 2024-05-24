@@ -1,3 +1,6 @@
+<?php
+require_once("controllerLoja.php");
+?>
 <!DOCTYPE html>
 <html>
 
@@ -145,8 +148,8 @@
   <section class="book_section layout_padding">
     <div class="container">
       <div class="heading_container">
-        <h2>
-          Book A Table
+        <h2 style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+          CADASTRE JÁ A SUA EMPRESA
         </h2>
       </div>
       <div class="row">
@@ -154,47 +157,92 @@
           <div class="form_container">
             <form action="">
               <div>
-                <input type="text" class="form-control" placeholder="Your Name" />
+                <input type="text" class="form-control" placeholder="Nome da empresa" name="nome"/>
               </div>
               <div>
-                <input type="text" class="form-control" placeholder="Phone Number" />
+                <input type="text" class="form-control" placeholder="CNPJ" name="cnpj"/>
               </div>
               <div>
-                <input type="email" class="form-control" placeholder="Your Email" />
+                <input type="email" class="form-control" placeholder="Email" name="email"/>
               </div>
               <div>
-                <select class="form-control nice-select wide">
-                  <option value="" disabled selected>
-                    How many persons?
-                  </option>
-                  <option value="">
-                    2
-                  </option>
-                  <option value="">
-                    3
-                  </option>
-                  <option value="">
-                    4
-                  </option>
-                  <option value="">
-                    5
-                  </option>
-                </select>
+                <input type="text" class="form-control" placeholder="Senha" name="password"/>
               </div>
               <div>
-                <input type="date" class="form-control">
+                <input type="text" class="form-control" placeholder="Numero" name="numero"/>
               </div>
+              <div>
+                <input type="text" class="form-control" placeholder="Rua" name="rua"/>
+              </div>
+              <div>
+                <input type="text" class="form-control" placeholder="Bairro" name="bairro"/>
+              </div>
+              <div>
+                <input type="text" class="form-control" placeholder="Cidade" name="cidade"/>
+              </div>
+
+              <div>
+                <input type="text" class="form-control" placeholder="Complemento" name="complemento"/>
+              </div>
+
+              <div class="input-group mb-3">
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="editFotoFundo" name="">
+                    <label class="custom-file-label" for="inputGroupFile02">Adicione uma logo</label>
+                </div>
+              </div>
+
+              <div class="input-group mb-3">
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="editFotoFundo" name="">
+                    <label class="custom-file-label" for="inputGroupFile02">Adicione uma foto de fundo para a página da sua empresa</label>
+                </div>
+              </div>
+
+              <div>
+                <input type="text" class="form-control" placeholder="Descricão da sua empresa" />
+              </div>
+ 
+              <div class="form-control" style="display: flex; justify-content:space-around;  width: 100%;">
+
+                <input type="hidden" name="hiddenData" value="valor escondido">
+ 
+                <input type="hidden" name="hiddenData" value="valor escondido">
+ 
+                <input type="hidden" name="hiddenData" value="valor escondido">
+ 
+                <input type="hidden" name="hiddenData" value="valor escondido">
+ 
+                <input type="hidden" name="hiddenData" value="valor escondido">
+ 
+                <input type="hidden" name="hiddenData" value="valor escondido">
+ 
+                <input type="hidden" name="hiddenData" value="valor escondido">
+ 
+              </div>
+ 
+              <div>
+                <input type="text" class="form-control" placeholder="Link do Instagram da sua empresa" />
+              </div>
+ 
+              <div>
+                <input type="text" class="form-control" placeholder="Link do facebook da sua empresa" />
+              </div>
+ 
+              <div>
+                <input type="text" class="form-control" placeholder="Taxa de entrega" />
+              </div>
+ 
+              <div>
+                <input type="text" class="form-control" placeholder="Telefone para contato" />
+              </div>
+ 
               <div class="btn_box">
                 <button>
                   Book Now
                 </button>
               </div>
             </form>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="map_container ">
-            <div id="googleMap"></div>
           </div>
         </div>
       </div>
@@ -300,10 +348,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
   <!-- custom js -->
   <script src="js/custom.js"></script>
-  <!-- Google Map -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
-  </script>
-  <!-- End Google Map -->
 
 </body>
 
