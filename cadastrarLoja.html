@@ -33,6 +33,9 @@ require_once("controllerLoja.php");
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
+  <!-- select dos dias da semana -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.0.1/dist/css/multi-select-tag.css">
+
 </head>
 
 <body class="sub_page">
@@ -202,15 +205,48 @@ require_once("controllerLoja.php");
               <div>
                 <input type="text" class="form-control" placeholder="Descricão da sua empresa" name="descricao"/>
               </div>
- 
-              <select multiple>
+              
+              <div>
 
-                <option>
-                    a
+                <label for="">selecione os dias em que a sua empresa funcionará para o publico</label>
+              
+              </div>
+
+              <div>
+                <select multiple name="semana" id="semana">
+
+                <option value="1">
+                    Domingo
+                </option>
+
+                <option value="2">
+                    Segunda feira
+                </option>
+                
+                <option value="3">
+                    Terça feira
+                </option>
+                
+                <option value="4">
+                    Quarta feira
+                </option>
+                
+                <option value="5">
+                    Quinta feira
+                </option>
+ 
+                <option value="6">
+                    Sexta feira
+                </option>
+ 
+                <option value="7">
+                    Sábado
                 </option>
  
               </select>
- 
+              
+              </div>
+
               <div>
                 <input type="text" class="form-control" placeholder="Link do Instagram da sua empresa" name="instagram"/>
               </div>
@@ -228,9 +264,9 @@ require_once("controllerLoja.php");
               </div>
  
               <div class="btn_box">
-                <button>
+                <input type="submit" name="botao" value="cadastrar">
                   Book Now
-                </button>
+              </input>
               </div>
             </form>
           </div>
@@ -327,6 +363,13 @@ require_once("controllerLoja.php");
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
   <!-- custom js -->
   <script src="js/custom.js"></script>
+
+  <!-- select dias da semana script -->
+  <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.0.1/dist/js/multi-select-tag.js"></script>
+
+  <script>
+    new MultiSelectTag('semana')  // id
+</script>
 
 </body>
 

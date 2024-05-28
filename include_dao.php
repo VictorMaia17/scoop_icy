@@ -13,5 +13,7 @@
 	require_once('DTO/Loja.php');
 	require_once('DAO/ProdutoDAO.php');
 	require_once('DTO/Produto.php');
+	require_once('DAO/AtendimentoDAO.php');
+	require_once('DTO/Atendimento.php');
 
 ?>
