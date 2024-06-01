@@ -159,7 +159,7 @@ require_once("controllerAtendimento.php");
       <div class="row">
         <div class="col-md-6">
           <div class="form_container">
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
               <div>
                 <input type="text" class="form-control" placeholder="Nome da empresa" name="nome"/>
               </div>
@@ -198,7 +198,7 @@ require_once("controllerAtendimento.php");
 
               <div class="input-group mb-3">
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="editFotoFundo" name="fotoFundo">
+                  <input type="file" class="custom-file-input" id="editFotoFundo" name="foto_fundo">
                     <label class="custom-file-label" for="inputGroupFile02">Adicione uma foto de fundo para a página da sua empresa</label>
                 </div>
               </div>
@@ -214,33 +214,33 @@ require_once("controllerAtendimento.php");
               </div>
 
               <div>
-                <select multiple name="semana" id="semana">
+                <select multiple name="dias_selecionados[]" id="dias_selecionados">
 
-                  <option value="1">
+                  <option value="domingo">
                       Domingo
                   </option>
 
-                  <option value="2">
+                  <option value="segunda">
                       Segunda feira
                   </option>
                   
-                  <option value="3">
+                  <option value="terca">
                       Terça feira
                   </option>
                   
-                  <option value="4">
+                  <option value="quarta">
                       Quarta feira
                   </option>
                   
-                  <option value="5">
+                  <option value="quinta">
                       Quinta feira
                   </option>
   
-                  <option value="6">
+                  <option value="sexta">
                       Sexta feira
                   </option>
   
-                  <option value="7">
+                  <option value="sabado">
                       Sábado
                   </option>
  
@@ -264,6 +264,8 @@ require_once("controllerAtendimento.php");
                 <input type="text" class="form-control" placeholder="Telefone para contato" name="telefone"/>
               </div>
  
+              <input type="hidden" name="origem" value="cadastrarLoja"/>
+
               <div class="btn_box">
                 <input type="submit" name="botao" value="cadastrar">
                   Book Now
@@ -369,7 +371,7 @@ require_once("controllerAtendimento.php");
   <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.0.1/dist/js/multi-select-tag.js"></script>
 
   <script>
-    new MultiSelectTag('semana')  // id
+    new MultiSelectTag('dias_selecionados')  // id
 </script>
 
 </body>

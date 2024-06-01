@@ -4,6 +4,7 @@ require_once ("include_dao.php");
 
 $botao = isset($_POST['botao']) ? $_POST['botao'] : "";
 $pesquisa = isset($_GET['pesquisa']) ?  $_GET['pesquisa'] : "";
+
 $loja = new Loja();
 $lojaDAO = new LojaDAO();			
 
@@ -40,6 +41,8 @@ else{
 
 if($botao == "cadastrar"){
 
+	$origem = $_POST['origem'];
+
 	$logo = isset($_FILES['logo']) ? $_FILES['logo'] : "";
 
 	if(!empty($logo)){
@@ -54,6 +57,12 @@ if($botao == "cadastrar"){
 			//var_dump($foto);
 		}
 	
+	}
+
+	else{
+
+		$novoNome = "semFoto.png";
+
 	}
 
 	$foto_fundo = isset($_FILES['foto_fundo']) ? $_FILES['foto_fundo'] : "";
@@ -73,8 +82,11 @@ if($botao == "cadastrar"){
 	}
 
 	else{
+
 		$novaFotoFundo = "nada.jpg";
+
 	}
+
 	$nome = isset($_POST['nome']) ? $_POST['nome'] : "";
 	$cnpj = isset($_POST['cnpj']) ? $_POST['cnpj'] : "";
     $email = isset($_POST['email']) ? $_POST['email'] : "";
@@ -117,8 +129,18 @@ if($botao == "cadastrar"){
 	
 	
 	$resultado = $lojaDAO->inserir($loja);
-	header("location:gerenciar.php?msg=adicionado");
+	
+	if($origem == "gerenciarLoja"){
 
+		header("location:gerenciarLoja.php");
+
+	} 
+	
+	else{
+
+		header("location:cadastrarLoja.php");
+
+	}
 }
 
 else if($botao == "editar"){
@@ -143,7 +165,7 @@ else if($botao == "editar"){
     $taxa_entrega = isset($_POST['taxa_entrega']) ? $_POST['taxa_entrega'] : "";
 	$telefone = isset($_POST['telefone']) ? $_POST['telefone'] : "";
 
-	$loja->setFotos($novoNome);  
+	$loja->setLogo($novoNome);  
 	$loja->setNome($nome);
 	$loja->setCnpj($cnpj);
 	$loja->setEmail($email);

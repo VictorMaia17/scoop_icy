@@ -89,6 +89,9 @@ class LojaDAO{
 		$consulta->bindValue(':taxa_entrega',$loja->getTaxa_entrega()); 
 
 		$consulta->bindValue(':telefone',$loja->getTelefone()); 
+
+		$loja_id = $conn->insert_id;
+
 		if($consulta->execute())
 			return true;
 		else

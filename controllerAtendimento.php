@@ -8,15 +8,43 @@ $lojaDAO = new AtendimentoDAO();
 
 if($botao == "cadastrar"){
 
-    $domingo = isset($_POST['domingo']) ? $_POST['domingo'] : "";
-	$segunda = isset($_POST['segunda']) ? $_POST['segunda'] : "";
-    $terca = isset($_POST['terca']) ? $_POST['terca'] : "";
-    $quarta = isset($_POST['quarta']) ? $_POST['quarta'] : "";
-	$quinta = isset($_POST['quinta']) ? $_POST['quinta'] : "";
-	$sexta = isset($_POST['sexta']) ? $_POST['sexta'] : "";
-	$sabado = isset($_POST['sabado']) ? $_POST['sabado'] : "";
-	$hora_abre = isset($_POST['hora_abre']) ? $_POST['hora_abre'] : "";
-	$hora_fecha = isset($_POST['hora_fecha']) ? $_POST['hora_fecha'] : "";
+
+	$hora_abre = "";
+	$hora_fecha = "";
+
+	//ADICIONA OS DIAS EM QUE A EMPRESA FUNCIONA
+	$dias_selecionados = isset($_POST['dias_selecionados']) ? $_POST['dias_selecionados'] : "";
+
+    $dias_semana = [
+
+		["domingo", ""],
+		["segunda", ""],
+		["terca", ""],
+		["quarta", ""],
+		["quinta", ""],
+		["sexta", ""],
+		["sabado", ""]
+
+	];
+
+	foreach($dias_semana as $dia){
+
+		foreach($dias_selecionados as $selecionados){
+
+			if($dia[0] == $selecionados){
+
+				$dia[1] == "1";
+
+			}
+
+			else{
+
+				$dia[1] == "0";
+
+			}
+		
+	}
+	}
 
     $atendimento->setDomingo($domingo);  
 	$atendimento->setSegunda($segunda);  

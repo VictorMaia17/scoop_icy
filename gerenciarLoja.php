@@ -479,6 +479,9 @@ $(document).ready(function(){
 					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
 					<input type="submit" class="btn btn-success" value="cadastrar" name="botao" >
 				</div>
+
+				<input type="hidden" name="origem" value="gerenciarLoja"/>
+
 			</form>
 		</div>
 	</div>
