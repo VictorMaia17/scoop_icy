@@ -5,6 +5,22 @@
 	   
 class LojaDAO{
 
+	private $loja_id;
+
+		//loga um cliente
+	public function logar($user, $pass){
+
+		include("conexao.php");
+		$sql = 'SELECT * FROM loja WHERE email = :email and senha = :senha';
+		$consulta = $conexao->prepare($sql);
+		$consulta->bindValue(":email",$user);
+		$consulta->bindValue(":senha",$pass);
+		$consulta->execute();
+		return ($consulta->fetch(PDO::FETCH_ASSOC));
+
+	}
+	
+	
 	//Carrega um elemento pela chave primária
 	public function carregar($cod){
 		include("conexao.php");
@@ -90,12 +106,20 @@ class LojaDAO{
 
 		$consulta->bindValue(':telefone',$loja->getTelefone()); 
 
-		$loja_id = $conn->insert_id;
-
-		if($consulta->execute())
+		if($consulta->execute()){
+			$this->loja_id = $conexao->lastInsertId();
 			return true;
-		else
+		}
+		else{
 			return false;
+		}	
+
+}
+
+	public function retorna_id(){
+
+		return $this->loja_id;
+	
 	}
 	
 	//Atualiza um elemento na tabela

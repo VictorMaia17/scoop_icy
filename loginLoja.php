@@ -33,9 +33,6 @@ require_once("controllerLoja.php");
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
-  <!-- select dos dias da semana -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.0.1/dist/css/multi-select-tag.css">
-
 </head>
 
 <body class="sub_page">
@@ -70,7 +67,7 @@ require_once("controllerLoja.php");
                 <a class="nav-link" href="about.html">Sobre</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="book.html">Cadastre-se <span class="sr-only">(current)</span> </a>
+                <a class="nav-link" href="book.html">Logue na sua loja <span class="sr-only">(current)</span> </a>
               </li>
             </ul>
             <div class="user_option">
@@ -152,121 +149,24 @@ require_once("controllerLoja.php");
     <div class="container">
       <div class="heading_container">
         <h2 style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
-          CADASTRE JÁ A SUA EMPRESA
+          LOGUE NA SUA LOJA
         </h2>
       </div>
       <div class="row">
         <div class="col-md-6">
           <div class="form_container">
-            <form method="post" enctype="multipart/form-data">
-              <div>
-                <input type="text" class="form-control" placeholder="Nome da empresa" name="nome"/>
-              </div>
-              <div>
-                <input type="text" class="form-control" placeholder="CNPJ" name="cnpj"/>
-              </div>
+            <form method="post">
+
               <div>
                 <input type="email" class="form-control" placeholder="Email" name="email"/>
-              </div>
+              </div
+              >
               <div>
                 <input type="text" class="form-control" placeholder="Senha" name="password"/>
               </div>
-              <div>
-                <input type="text" class="form-control" placeholder="Numero" name="numero"/>
-              </div>
-              <div>
-                <input type="text" class="form-control" placeholder="Rua" name="rua"/>
-              </div>
-              <div>
-                <input type="text" class="form-control" placeholder="Bairro" name="bairro"/>
-              </div>
-              <div>
-                <input type="text" class="form-control" placeholder="Cidade" name="cidade"/>
-              </div>
-
-              <div>
-                <input type="text" class="form-control" placeholder="Complemento" name="complemento"/>
-              </div>
-
-              <div class="input-group mb-3">
-                <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="editLogo" name="logo">
-                    <label class="custom-file-label" for="inputGroupFile02">Adicione uma logo</label>
-                </div>
-              </div>
-
-              <div class="input-group mb-3">
-                <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="editFotoFundo" name="foto_fundo">
-                    <label class="custom-file-label" for="inputGroupFile02">Adicione uma foto de fundo para a página da sua empresa</label>
-                </div>
-              </div>
-
-              <div>
-                <input type="text" class="form-control" placeholder="Descricão da sua empresa" name="descricao"/>
-              </div>
-              
-              <div>
-
-                <label for="">selecione os dias em que a sua empresa funcionará para o publico</label>
-              
-              </div>
-
-              <div>
-                <select multiple name="dias_selecionados[]" id="dias_selecionados">
-
-                  <option value="domingo">
-                      Domingo
-                  </option>
-
-                  <option value="segunda">
-                      Segunda feira
-                  </option>
-                  
-                  <option value="terca">
-                      Terça feira
-                  </option>
-                  
-                  <option value="quarta">
-                      Quarta feira
-                  </option>
-                  
-                  <option value="quinta">
-                      Quinta feira
-                  </option>
-  
-                  <option value="sexta">
-                      Sexta feira
-                  </option>
-  
-                  <option value="sabado">
-                      Sábado
-                  </option>
- 
-              </select>
-              
-              </div>
-
-              <div>
-                <input type="text" class="form-control" placeholder="Link do Instagram da sua empresa" name="instagram"/>
-              </div>
- 
-              <div>
-                <input type="text" class="form-control" placeholder="Link do facebook da sua empresa" name="facebook"/>
-              </div>
- 
-              <div>
-                <input type="text" class="form-control" placeholder="Taxa de entrega" name="taxa_entrega"/>
-              </div>
- 
-              <div>
-                <input type="text" class="form-control" placeholder="Telefone para contato" name="telefone"/>
-              </div>
- 
-              <input type="hidden" name="origem" value="cadastrarLoja"/>
 
               <div class="btn_box">
-                <input type="submit" name="botao" value="cadastrar">
+                <input type="submit" name="botao" value="logar">
                   Book Now
               </input>
               </div>
@@ -365,13 +265,6 @@ require_once("controllerLoja.php");
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
   <!-- custom js -->
   <script src="js/custom.js"></script>
-
-  <!-- select dias da semana script -->
-  <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.0.1/dist/js/multi-select-tag.js"></script>
-
-  <script>
-    new MultiSelectTag('dias_selecionados')  // id
-</script>
 
 </body>
 
