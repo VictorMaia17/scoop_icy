@@ -32,7 +32,7 @@ if($botao == "logar"){
 	else{
 		session_start();
 		$_SESSION['usuario'] = $email;
-		header("location:logado.php");
+		header("location:index.html");
 	}
 }
 
@@ -67,7 +67,7 @@ else if($botao == "cadastrar"){
 
 	if($origem == "cadastrarCliente"){
 
-		header("location:cadastrarCliente.php");
+		header("location:index.html");
 		
 	} 
 	

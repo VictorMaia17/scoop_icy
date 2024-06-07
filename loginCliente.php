@@ -67,7 +67,7 @@ require_once("controllerCliente.php");
                 <a class="nav-link" href="about.html">Sobre</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="book.html">Cadastre-se <span class="sr-only">(current)</span> </a>
+                <a class="nav-link" href="book.html">LOGIN<span class="sr-only">(current)</span> </a>
               </li>
             </ul>
             <div class="user_option">

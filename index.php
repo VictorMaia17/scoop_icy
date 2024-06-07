@@ -1,3 +1,22 @@
+<?php
+
+require_once ("controllerCliente.php");
+
+session_start();
+
+if (empty($_SESSION['usuario'])){
+
+  echo("deu erro");
+
+}
+
+else{
+
+  echo($_SESSION['usuario']);
+
+}
+
+?>
 <!DOCTYPE html>
 <html>
 
