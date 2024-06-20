@@ -15,6 +15,7 @@ class ClienteDAO{
 		return ($consulta->fetchAll(PDO::FETCH_ASSOC));
 	}
 
+	//loga um cliente
 	public function logar($user, $pass){
 
 		include("conexao.php");
@@ -60,33 +61,29 @@ class ClienteDAO{
 	//Insere um elemento na tabela
 	public function inserir($cliente){
 		include("conexao.php");
-		$sql = 'INSERT INTO cliente (cod, nome, rg, cpf, email, telefone, senha, login, rua, numero, bairro, cidade, complemento) VALUES (:cod, :nome, :rg, :cpf, :email, :telefone, :senha, :login, :rua, :numero, :bairro, :cidade, :complemento)';
+		$sql = 'INSERT INTO cliente (cod, nome, numero, rua, telefone, bairro, cidade, email, senha, complemento, login) VALUES (:cod, :nome, :numero, :rua, :telefone, :bairro, :cidade, :email, :senha, :complemento, :login)';
 		$consulta = $conexao->prepare($sql);
 		$consulta->bindValue(':cod',$cliente->getCod()); 
 
 		$consulta->bindValue(':nome',$cliente->getNome()); 
 
-		$consulta->bindValue(':rg',$cliente->getRg()); 
-
-		$consulta->bindValue(':cpf',$cliente->getCpf()); 
-
-		$consulta->bindValue(':email',$cliente->getEmail()); 
-
-		$consulta->bindValue(':telefone',$cliente->getTelefone()); 
-
-		$consulta->bindValue(':senha',$cliente->getSenha()); 
-
-		$consulta->bindValue(':login',$cliente->getLogin()); 
+		$consulta->bindValue(':numero',$cliente->getNumero()); 
 
 		$consulta->bindValue(':rua',$cliente->getRua()); 
 
-		$consulta->bindValue(':numero',$cliente->getNumero()); 
+		$consulta->bindValue(':telefone',$cliente->getTelefone()); 
 
 		$consulta->bindValue(':bairro',$cliente->getBairro()); 
 
 		$consulta->bindValue(':cidade',$cliente->getCidade()); 
 
+		$consulta->bindValue(':email',$cliente->getEmail()); 
+
+		$consulta->bindValue(':senha',$cliente->getSenha()); 
+
 		$consulta->bindValue(':complemento',$cliente->getComplemento()); 
+
+		$consulta->bindValue(':login',$cliente->getLogin()); 
 		if($consulta->execute())
 			return true;
 		else
@@ -96,33 +93,29 @@ class ClienteDAO{
 	//Atualiza um elemento na tabela
 	public function atualizar($cliente){
 		include("conexao.php");
-		$sql = 'UPDATE cliente SET cod = :cod, nome = :nome, rg = :rg, cpf = :cpf, email = :email, telefone = :telefone, senha = :senha, login = :login, rua = :rua, numero = :numero, bairro = :bairro, cidade = :cidade, complemento = :complemento WHERE cod = :cod';
+		$sql = 'UPDATE cliente SET cod = :cod, nome = :nome, numero = :numero, rua = :rua, telefone = :telefone, bairro = :bairro, cidade = :cidade, email = :email, senha = :senha, complemento = :complemento, login = :login WHERE cod = :cod';
 		$consulta = $conexao->prepare($sql);
 		$consulta->bindValue(':cod',$cliente->getCod()); 
 
 		$consulta->bindValue(':nome',$cliente->getNome()); 
 
-		$consulta->bindValue(':rg',$cliente->getRg()); 
-
-		$consulta->bindValue(':cpf',$cliente->getCpf()); 
-
-		$consulta->bindValue(':email',$cliente->getEmail()); 
-
-		$consulta->bindValue(':telefone',$cliente->getTelefone()); 
-
-		$consulta->bindValue(':senha',$cliente->getSenha()); 
-
-		$consulta->bindValue(':login',$cliente->getLogin()); 
+		$consulta->bindValue(':numero',$cliente->getNumero()); 
 
 		$consulta->bindValue(':rua',$cliente->getRua()); 
 
-		$consulta->bindValue(':numero',$cliente->getNumero()); 
+		$consulta->bindValue(':telefone',$cliente->getTelefone()); 
 
 		$consulta->bindValue(':bairro',$cliente->getBairro()); 
 
 		$consulta->bindValue(':cidade',$cliente->getCidade()); 
 
+		$consulta->bindValue(':email',$cliente->getEmail()); 
+
+		$consulta->bindValue(':senha',$cliente->getSenha()); 
+
 		$consulta->bindValue(':complemento',$cliente->getComplemento()); 
+
+		$consulta->bindValue(':login',$cliente->getLogin()); 
 		if($consulta->execute())
 			return true;
 		else
