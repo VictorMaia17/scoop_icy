@@ -162,7 +162,7 @@ require_once("controllerLoja.php");
               </div
               >
               <div>
-                <input type="text" class="form-control" placeholder="Senha" name="password"/>
+                <input type="password" class="form-control" placeholder="Senha" name="password"/>
               </div>
 
               <div class="btn_box">
