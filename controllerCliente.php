@@ -4,9 +4,34 @@ require_once ("include_dao.php");
 
 $botao = isset($_POST['botao']) ? $_POST['botao'] : "";
 $pesquisa = isset($_GET['pesquisa']) ?  $_GET['pesquisa'] : "";
+$action = isset($_GET['action']) ? $_GET['action'] : "";
 $cliente = new Cliente();
 $clienteDAO = new ClienteDAO();
 
+function testaSession(){
+	if (empty($_SESSION['usuario'])){
+
+		echo "
+		<script>
+		mostraModal();
+		</script>";
+		
+	}
+	
+	else{
+		
+		echo "
+		<script>
+		window.location.href='gerenciarLoja.php';
+		</script>";
+		
+	}
+  }
+
+  if ($action == 'testaSession') {
+    testaSession();
+    exit;
+}
 
 if (empty($pesquisa)){
 
@@ -32,7 +57,7 @@ if($botao == "logar"){
 	else{
 		session_start();
 		$_SESSION['usuario'] = $email;
-		header("location:index.html");
+		header("location:index.php");
 	}
 }
 
@@ -67,7 +92,7 @@ else if($botao == "cadastrar"){
 
 	if($origem == "cadastrarCliente"){
 
-		header("location:index.html");
+		header("location:index.php");
 		
 	} 
 	

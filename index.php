@@ -4,17 +4,7 @@ require_once ("controllerCliente.php");
 
 session_start();
 
-if (empty($_SESSION['usuario'])){
-
-  echo("deu erro");
-
-}
-
-else{
-
-  echo($_SESSION['usuario']);
-
-}
+echo($_SESSION['usuario']);
 
 ?>
 <!DOCTYPE html>
@@ -48,7 +38,6 @@ else{
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
-
 </head>
 
 <body>
@@ -410,7 +399,7 @@ else{
                     Experimente o melhor💜
                   </p>
                   <div class="options">
-                    <a href="">
+                    <a href="" onclick="chamarTestaSession(event)">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                         <g>
                           <g>
@@ -979,8 +968,29 @@ else{
       </div>
     </div>
   </footer>
+  
+  <!-- Trigger/Open The Modal -->
+<button id="myBtn">Open Modal</button>
+
+  <!-- O Modal -->
+<div id="myModal" class="modal">
+
+<!-- Modal content -->
+<div class="modal-content">
+  <span class="close">&times;</span>
+  <p>Se cadastre ou logue para comprar no nosso site!!!</p>
+
+  <a href="cadastrarCliente.php">Cadastrar</a>
+  <a href="loginCliente.php">Logar</a>
+  
+</div>
+
+</div>
+
   <!-- footer section -->
 
+  <!-- MODAL -->
+  <script src="modal.js"></script>
   <!-- jQery -->
   <script src="js/jquery-3.4.1.min.js"></script>
   <!-- popper js -->
