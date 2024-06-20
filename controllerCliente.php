@@ -1,7 +1,7 @@
 <?php
 
 require_once ("include_dao.php");
-
+session_start();
 $botao = isset($_POST['botao']) ? $_POST['botao'] : "";
 $pesquisa = isset($_GET['pesquisa']) ?  $_GET['pesquisa'] : "";
 $action = isset($_GET['action']) ? $_GET['action'] : "";
@@ -20,7 +20,7 @@ function testaSession(){
 	
 	else{
 		
-		header('gerenciarLoja.php');
+		echo"<script>window.location.href='gerenciarLoja.php'</script>";
 		
 	}
   }
@@ -47,12 +47,12 @@ if($botao == "logar"){
 	$password = isset($_POST['password']) ? $_POST['password'] : "";
 
 	$resultado = $clienteDAO->logar($email, $password);
+	session_start();
 
 	if($resultado == false){
 		print("Email ou senha INCORRETO!");
 	}
 	else{
-		session_start();
 		$_SESSION['usuario'] = $email;
 		header("location:index.php");
 	}
