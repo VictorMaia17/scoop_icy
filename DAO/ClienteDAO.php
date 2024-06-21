@@ -30,7 +30,7 @@ class ClienteDAO{
 
 	//Lista todos os elementos da tabela
 	public function listarTodos(){
-		include("conexao.php");
+		include("../../conexao.php");
 		$sql = 'SELECT * FROM cliente';
 		$consulta = $conexao->prepare($sql);
 		$consulta->execute();
