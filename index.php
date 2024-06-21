@@ -40,17 +40,61 @@ require_once ("controllerCliente.php");
 
 <body>
 
+<<<<<<< Updated upstream
   <div class="hero_area">
     <div class="bg-box">
+<<<<<<< HEAD:index.php
       <img src="acai.png.png" alt="">
+=======
+      <img src="images/hero-bg.jpg" alt="">
+=======
+  <section class="slider">
+    <div class="slider-content">
+      <input type="radio" name="btn-radio" id="radio1">
+      <input type="radio" name="btn-radio" id="radio2">
+      <input type="radio" name="btn-radio" id="radio3">
+
+      <div class="slide-box primeiro">
+        <img class"img.desktok" src="img-desktop.jpg" alt="slide1">
+        
+       </div>
+
+       <div class="slide-box segundo">
+        <img class"img.desktop" src="acai.png.png" alt="slide2">
+        
+       </div>
+
+       <div class="slide-box terceiro">
+        <img class"img.desktop" src="images/nossaacaideira.png" alt="slide3">
+        
+       </div>
+
+       <div class ="nev-auto">
+        <div class ="auto-btn1"> </div>
+        <div class ="auto-btn2"> </div>
+        <div class ="auto-btn3"> </div>
+       </div>
+       <div class ="nav-manual">
+        <label for="radio1" class="manual-btn"></label> 
+        <label for="radio2" class="manual-btn"></label> 
+        <label for="radio3" class="manual-btn"></label> 
+       </div>
+
+>>>>>>> Stashed changes
+>>>>>>> Front-end:template/index.html
     </div>
+  </section>
     <!-- header section strats -->
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.html">
             <span>
+<<<<<<< HEAD:index.php
              Scoop Icy
+=======
+              Scoop Icy
+>>>>>>> Front-end:template/index.html
             </span>
           </a>
 
@@ -61,10 +105,17 @@ require_once ("controllerCliente.php");
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
               <li class="nav-item active">
+<<<<<<< HEAD:index.php
                 <a class="nav-link" href="index.html">Inicio<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="menu.html">Lojas</a>
+=======
+               <Br> <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="menu.html">Menu</a> </li>
+>>>>>>> Front-end:template/index.html
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="about.html">Sobre</a>
@@ -217,6 +268,7 @@ require_once ("controllerCliente.php");
     </section>
     <!-- end slider section -->
   </div>
+  
 
   <!-- offer section -->
 
@@ -910,7 +962,14 @@ require_once ("controllerCliente.php");
               Contatos
             </h4>
             <div class="contact_link_box">
+<<<<<<< HEAD:index.php
               
+=======
+              <a href="">
+                
+                
+              </a>
+>>>>>>> Front-end:template/index.html
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
@@ -932,6 +991,7 @@ require_once ("controllerCliente.php");
               Scoop Icy
             </a>
             <p>
+<<<<<<< HEAD:index.php
               Você também pode entrar em contato com nós pelas nossas redes sociais 
             </p>
             <div class="footer_social">
@@ -942,6 +1002,25 @@ require_once ("controllerCliente.php");
                 <i class="fa fa-twitter" aria-hidden="true"></i>
               </a>
               <a href="https://www.instagram.com/scoop.icy/">
+=======
+              Entre em contato também pelas nossas redes sociais 
+            </p>
+            <div class="footer_social">
+              <a href="https://www.facebook.com/profile.php?id=61557925204934">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="https://twitter.com/Scoop_icy">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+<<<<<<< Updated upstream
+              <a href="">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="">
+=======
+              <a href="https://www.instagram.com/scoop.icy/">
+>>>>>>> Stashed changes
+>>>>>>> Front-end:template/index.html
                 <i class="fa fa-instagram" aria-hidden="true"></i>
               </a>
             </div>
@@ -952,7 +1031,14 @@ require_once ("controllerCliente.php");
             Horário de funcionamento
           </h4>
           <p>
+<<<<<<< HEAD:index.php
             Domingo a Domingo
+=======
+           Domingo a Domingo
+          </p>
+          <p>
+            24 horas
+>>>>>>> Front-end:template/index.html
           </p>
         </div>
       </div>
@@ -960,7 +1046,11 @@ require_once ("controllerCliente.php");
         <p>
           <span id="displayYear"></span> 
           <a href="https://html.design/"></a><br><br>
+<<<<<<< HEAD:index.php
            <span id="displayYear"></span>
+=======
+         
+>>>>>>> Front-end:template/index.html
           <a href="https://themewagon.com/" target="_blank"></a>
         </p>
       </div>

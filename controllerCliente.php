@@ -112,8 +112,6 @@ else if($botao == "editar"){
   	$cidade = isset($_POST['cidade']) ? $_POST['cidade'] : "";
   	$email = isset($_POST['email']) ? $_POST['email'] : "";
   	$password = isset($_POST['password']) ? $_POST['password'] : "";
-  	$rg = isset($_POST['rg']) ? $_POST['rg'] : "";
-  	$cpf = isset($_POST['cpf']) ? $_POST['cpf'] : "";
   	$complemento = isset($_POST['complemento']) ? $_POST['complemento'] : "";
   	$login = isset($_POST['login']) ? $_POST['login'] : "";
 
