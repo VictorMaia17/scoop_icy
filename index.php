@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<<< HEAD:index.php
 require_once ("controllerCliente.php");
+========
+require_once ("../../../controllerCliente.php");
+>>>>>>>> Front-end:frontEnd/template/lojas/paginaLoja.php
 
 //echo($_SESSION['usuario']);
 
@@ -43,6 +47,7 @@ require_once ("controllerCliente.php");
 <<<<<<< Updated upstream
   <div class="hero_area">
     <div class="bg-box">
+<<<<<<<< HEAD:index.php
 <<<<<<< HEAD:index.php
       <img src="acai.png.png" alt="">
 =======
@@ -84,17 +89,25 @@ require_once ("controllerCliente.php");
 >>>>>>> Front-end:template/index.html
     </div>
   </section>
+========
+      <img src="acai.png.png" alt="">
+    </div>
+>>>>>>>> Front-end:frontEnd/template/lojas/paginaLoja.php
     <!-- header section strats -->
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.html">
             <span>
+<<<<<<<< HEAD:index.php
 <<<<<<< HEAD:index.php
              Scoop Icy
 =======
               Scoop Icy
 >>>>>>> Front-end:template/index.html
+========
+             Scoop Icy
+>>>>>>>> Front-end:frontEnd/template/lojas/paginaLoja.php
             </span>
           </a>
 
