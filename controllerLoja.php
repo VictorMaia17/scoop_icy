@@ -4,8 +4,11 @@ require_once ("include_dao.php");
 
 $botao = isset($_POST['botao']) ? $_POST['botao'] : "";
 $pesquisa = isset($_GET['pesquisa']) ?  $_GET['pesquisa'] : "";
+
 $loja = new Loja();
-$lojaDAO = new LojaDAO();			
+$lojaDAO = new LojaDAO();
+$atendimento = new Atendimento();
+$atendimentoDAO = new AtendimentoDAO();			
 
 if (empty($pesquisa)){
 
@@ -21,11 +24,11 @@ else{
  
 //login
 
-/*if($botao == "enviar"){
+if($botao == "logar"){
 	$email = isset($_POST['email']) ? $_POST['email'] : "";
 	$password = isset($_POST['password']) ? $_POST['password'] : "";
 
-	$resultado = $clienteDAO->logar($email, $password);
+	$resultado = $lojaDAO->logar($email, $password);
 
 	if($resultado == false){
 		print("Email ou senha INCORRETO!");
@@ -33,12 +36,14 @@ else{
 	else{
 		session_start();
 		$_SESSION['usuario'] = $email;
-		header("location:logado.php");
+		header("location:index.html");
 	}
 }
-*/
+
 
 if($botao == "cadastrar"){
+
+	$origem = $_POST['origem'];
 
 	$logo = isset($_FILES['logo']) ? $_FILES['logo'] : "";
 
@@ -54,6 +59,12 @@ if($botao == "cadastrar"){
 			//var_dump($foto);
 		}
 	
+	}
+
+	else{
+
+		$novoNome = "semFoto.png";
+
 	}
 
 	$foto_fundo = isset($_FILES['foto_fundo']) ? $_FILES['foto_fundo'] : "";
@@ -73,8 +84,11 @@ if($botao == "cadastrar"){
 	}
 
 	else{
+
 		$novaFotoFundo = "nada.jpg";
+
 	}
+
 	$nome = isset($_POST['nome']) ? $_POST['nome'] : "";
 	$cnpj = isset($_POST['cnpj']) ? $_POST['cnpj'] : "";
     $email = isset($_POST['email']) ? $_POST['email'] : "";
@@ -117,8 +131,69 @@ if($botao == "cadastrar"){
 	
 	
 	$resultado = $lojaDAO->inserir($loja);
-	header("location:gerenciar.php?msg=adicionado");
 
+	$hora_abre = "";
+	$hora_fecha = "";
+
+	//ADICIONA OS DIAS EM QUE A EMPRESA FUNCIONA
+	$dias_selecionados = isset($_POST['dias_selecionados']) ? $_POST['dias_selecionados'] : "";
+
+    $dias_semana = [
+
+		["domingo", ""],
+		["segunda", ""],
+		["terca", ""],
+		["quarta", ""],
+		["quinta", ""],
+		["sexta", ""],
+		["sabado", ""]
+
+	];
+
+	for($i = 0; $i <= 6; $i++){
+
+		foreach($dias_selecionados as $selecionados){
+
+			if($dias_semana[$i][0] == $selecionados){
+
+				$dias_semana[$i][1] = "1";
+				break;
+
+			}
+
+			else{
+
+				$dias_semana[$i][1] = "0";
+
+			}
+		
+	}
+	}
+	
+	$atendimento->setLoja_cod($lojaDAO->retorna_id());
+    $atendimento->setDomingo($dias_semana[0][1]);  
+	$atendimento->setSegunda($dias_semana[1][1]);  
+	$atendimento->setTerca($dias_semana[2][1]);
+	$atendimento->setQuarta($dias_semana[3][1]);
+	$atendimento->setQuinta($dias_semana[4][1]);
+	$atendimento->setSexta($dias_semana[5][1]);
+	$atendimento->setSabado($dias_semana[6][1]);
+	$atendimento->setHora_abre($hora_abre);
+	$atendimento->setHora_fecha($hora_fecha);
+
+    $resultado = $atendimentoDAO->inserir($atendimento);
+	
+	if($origem == "gerenciarLoja"){
+
+		header("location:gerenciarLoja.php");
+
+	} 
+	
+	else{
+
+		header("location:index.html");
+
+	}
 }
 
 else if($botao == "editar"){
@@ -143,7 +218,7 @@ else if($botao == "editar"){
     $taxa_entrega = isset($_POST['taxa_entrega']) ? $_POST['taxa_entrega'] : "";
 	$telefone = isset($_POST['telefone']) ? $_POST['telefone'] : "";
 
-	$loja->setFotos($novoNome);  
+	$loja->setLogo($novoNome);  
 	$loja->setNome($nome);
 	$loja->setCnpj($cnpj);
 	$loja->setEmail($email);

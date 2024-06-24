@@ -1,12 +1,34 @@
 <?php
 
 require_once ("include_dao.php");
-
+session_start();
 $botao = isset($_POST['botao']) ? $_POST['botao'] : "";
 $pesquisa = isset($_GET['pesquisa']) ?  $_GET['pesquisa'] : "";
+$action = isset($_GET['action']) ? $_GET['action'] : "";
 $cliente = new Cliente();
 $clienteDAO = new ClienteDAO();
 
+function testaSession(){
+	if (empty($_SESSION['usuario'])){
+
+		echo "
+		<script>
+		mostraModal();
+		</script>";
+		
+	}
+	
+	else{
+		
+		echo"<script>window.location.href='lojas/index.html'</script>";
+		
+	}
+  }
+
+  if ($action == 'testaSession') {
+    testaSession();
+    exit;
+}
 
 if (empty($pesquisa)){
 
@@ -20,42 +42,26 @@ else{
 
 }
 
-if($botao == "enviar"){
+if($botao == "logar"){
 	$email = isset($_POST['email']) ? $_POST['email'] : "";
 	$password = isset($_POST['password']) ? $_POST['password'] : "";
 
 	$resultado = $clienteDAO->logar($email, $password);
+	session_start();
 
 	if($resultado == false){
 		print("Email ou senha INCORRETO!");
 	}
 	else{
-		session_start();
 		$_SESSION['usuario'] = $email;
-		header("location:logado.php");
+		header("location:index.php");
 	}
 }
 
 else if($botao == "cadastrar"){
 
-	$foto = isset($_FILES['foto']) ? $_FILES['foto'] : "";
+	$origem = $_POST['origem'];
 
-	if(!empty($foto)){
-
-		$name = explode(".", $foto['name']);
-
-		if ($name[1] == "jpg" || $name[1] == "png" || $name[1] == "jpeg"){
-			
-			$novoNome = "cliente-".md5(time()*rand()).".".$name[1];
-			$destino = "clientes_img/$novoNome";
-			move_uploaded_file($foto["tmp_name"], $destino);
-			//var_dump($foto);
-		}
-	
-	}
-	else{
-		$novoNome = "semFoto.png";
-	}
 	$nome = isset($_POST['nome']) ? $_POST['nome'] : "";
 	$numero = isset($_POST['numero']) ? $_POST['numero'] : "";
 	$rua = isset($_POST['rua']) ? $_POST['rua'] : "";
@@ -66,8 +72,7 @@ else if($botao == "cadastrar"){
   	$password = isset($_POST['password']) ? $_POST['password'] : "";
   	$complemento = isset($_POST['complemento']) ? $_POST['complemento'] : "";
   	$login = isset($_POST['login']) ? $_POST['login'] : "";
-
-	$cliente->setFotos($novoNome);  
+  
 	$cliente->setNome($nome);
 	$cliente->setNumero($numero);
 	$cliente->setRua($rua);
@@ -76,14 +81,23 @@ else if($botao == "cadastrar"){
   	$cliente->setCidade($cidade);
   	$cliente->setEmail($email);
   	$cliente->setSenha($password);
-  	$cliente->setRg($rg);
-  	$cliente->setCpf($cpf);
   	$cliente->setComplemento($complemento);
   	$cliente->setLogin($login);
 	
 	
 	$resultado = $clienteDAO->inserir($cliente);
-	header("location:gerenciar.php?msg=adicionado");
+
+	if($origem == "cadastrarCliente"){
+
+		header("location:index.php");
+		
+	} 
+	
+	else{
+		
+		header("location:gerenciarCliente.php");
+
+	}
 
 }
 
@@ -98,8 +112,6 @@ else if($botao == "editar"){
   	$cidade = isset($_POST['cidade']) ? $_POST['cidade'] : "";
   	$email = isset($_POST['email']) ? $_POST['email'] : "";
   	$password = isset($_POST['password']) ? $_POST['password'] : "";
-  	$rg = isset($_POST['rg']) ? $_POST['rg'] : "";
-  	$cpf = isset($_POST['cpf']) ? $_POST['cpf'] : "";
   	$complemento = isset($_POST['complemento']) ? $_POST['complemento'] : "";
   	$login = isset($_POST['login']) ? $_POST['login'] : "";
 
