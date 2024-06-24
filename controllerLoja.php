@@ -10,9 +10,10 @@ $lojaDAO = new LojaDAO();
 $atendimento = new Atendimento();
 $atendimentoDAO = new AtendimentoDAO();			
 
-if (empty($pesquisa)){
+$lojas = $lojaDAO->listartodos();
 
-	$lojas = $lojaDAO->listartodos();
+/*if (empty($pesquisa)){
+
 
 }			
 
@@ -21,7 +22,7 @@ else{
 	$lojas = $lojaDAO->pesquisar($pesquisa);
 
 }
- 
+*/
 //login
 
 if($botao == "logar"){
