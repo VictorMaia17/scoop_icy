@@ -11,7 +11,7 @@
 --------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
-  background: #0c0b09;
+  background: #489ba9;
   color: #fff;
 }
 
@@ -45,7 +45,7 @@ h6 {
   bottom: 0;
   z-index: 9999;
   overflow: hidden;
-  background: #1a1814;
+  background: #a3249b;
 }
 
 #preloader:before {
@@ -97,7 +97,7 @@ h6 {
 
 .back-to-top:hover {
   background: #cda45e;
-  color: #1a1814;
+  color: #19141a;
 }
 
 .back-to-top:hover i {
@@ -650,7 +650,7 @@ section {
 }
 
 .section-bg {
-  background-color: #1a1814;
+  background-color: #6b316e; /*fundo cardápio*/
 }
 
 .section-title {

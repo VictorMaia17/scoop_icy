@@ -1,5 +1,5 @@
 <?php
-require_once("controllerCliente.php");
+require_once("../../controllerCliente.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -47,7 +47,7 @@ require_once("controllerCliente.php");
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.html">
             <span>
-              Scoop Icy
+             <h1>Scoop Icy</h1>
             </span>
           </a>
 
@@ -57,17 +57,14 @@ require_once("controllerCliente.php");
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Inicio </a>
+              <li class="nav-item active">
+                <a class="nav-link" href="index.php">Inicio<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="menu.html">Lojas</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="about.html">Sobre</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="book.html">LOGIN<span class="sr-only">(current)</span> </a>
               </li>
             </ul>
             <div class="user_option">
@@ -133,9 +130,6 @@ require_once("controllerCliente.php");
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
-              <a href="" class="order_online">
-                Order Online
-              </a>
             </div>
           </div>
         </nav>
@@ -149,24 +143,55 @@ require_once("controllerCliente.php");
     <div class="container">
       <div class="heading_container">
         <h2 style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
-          LOGIN
+          CADASTRE JÁ NA SCOOP ICY!
         </h2>
       </div>
       <div class="row">
         <div class="col-md-6">
           <div class="form_container">
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
+
+              <div>
+                <input type="text" class="form-control" placeholder="Nome" name="nome"/>
+              </div>
 
               <div>
                 <input type="email" class="form-control" placeholder="Email" name="email"/>
               </div
               >
               <div>
-                <input type="password" class="form-control" placeholder="Senha" name="password"/>
+                <input type="text" class="form-control" placeholder="Senha" name="password"/>
+              </div>
+              
+              <div>
+                <input type="text" class="form-control" placeholder="Cidade" name="cidade"/>   
+              </div>
+              
+              <div>
+                <input type="text" class="form-control" placeholder="Bairro" name="bairro"/>
+              </div>
+              
+              <div>
+                <input type="text" class="form-control" placeholder="Rua" name="rua"/>
+              </div>
+              
+              <div>
+                <input type="text" class="form-control" placeholder="Numero" name="numero"/>
               </div>
 
+                <div>
+                <input type="text" class="form-control" placeholder="Complemento" name="complemento"/>
+              </div>
+
+              
+              <div>
+                <input type="text" class="form-control" placeholder="Telefone para contato" name="telefone"/>
+              </div>
+
+              <input type="hidden" name="origem" value="cadastrarCliente"/>
+
               <div class="btn_box">
-                <input type="submit" name="botao" value="logar">
+                <input type="submit" name="botao" value="cadastrar">
                   Book Now
               </input>
               </div>

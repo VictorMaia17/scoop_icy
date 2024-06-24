@@ -1,5 +1,5 @@
 <?php
-require_once("controllerLoja.php");
+require_once("../../controllerLoja.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -50,7 +50,7 @@ require_once("controllerLoja.php");
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.html">
             <span>
-              Scoop Icy
+             <h1>Scoop Icy</h1>
             </span>
           </a>
 
@@ -60,17 +60,14 @@ require_once("controllerLoja.php");
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Inicio </a>
+              <li class="nav-item active">
+                <a class="nav-link" href="index.php">Inicio<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="menu.html">Lojas</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="about.html">Sobre</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="book.html">Cadastre-se <span class="sr-only">(current)</span> </a>
               </li>
             </ul>
             <div class="user_option">
@@ -136,9 +133,6 @@ require_once("controllerLoja.php");
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
-              <a href="" class="order_online">
-                Order Online
-              </a>
             </div>
           </div>
         </nav>

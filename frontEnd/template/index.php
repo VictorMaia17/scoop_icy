@@ -1,6 +1,6 @@
 <?php
 
-require_once ("../../controllerCliente.php");
+require_once ("../../controllerLoja.php");
 
 ?>
 <!DOCTYPE html>

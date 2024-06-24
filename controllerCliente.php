@@ -20,7 +20,7 @@ function testaSession(){
 	
 	else{
 		
-		echo"<script>window.location.href='gerenciarLoja.php'</script>";
+		echo"<script>window.location.href='lojas/index.html'</script>";
 		
 	}
   }

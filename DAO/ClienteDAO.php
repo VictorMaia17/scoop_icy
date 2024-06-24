@@ -1,13 +1,14 @@
 <?php
-
 	/* @Autor: Dalker Pinheiro
 	   Classe DAO */
-	   
+	
+include(__DIR__ . '/../config/config.php');		   
+   
 class ClienteDAO{
 
 	//Carrega um elemento pela chave primária
 	public function carregar($cod){
-		include("conexao.php");
+		include(CONEXAO_PATH);
 		$sql = 'SELECT * FROM cliente WHERE cod = :cod';
 		$consulta = $conexao->prepare($sql);
 		$consulta->bindValue(":cod",$cod);
@@ -18,7 +19,7 @@ class ClienteDAO{
 	//loga um cliente
 	public function logar($user, $pass){
 
-		include("conexao.php");
+		include(CONEXAO_PATH);
 		$sql = 'SELECT * FROM cliente WHERE email = :email and senha = :senha';
 		$consulta = $conexao->prepare($sql);
 		$consulta->bindValue(":email",$user);
@@ -30,7 +31,7 @@ class ClienteDAO{
 
 	//Lista todos os elementos da tabela
 	public function listarTodos(){
-		include("../../conexao.php");
+		include(CONEXAO_PATH);
 		$sql = 'SELECT * FROM cliente';
 		$consulta = $conexao->prepare($sql);
 		$consulta->execute();
@@ -39,7 +40,7 @@ class ClienteDAO{
 	
 	//Lista todos os elementos da tabela listando ordenados por uma coluna específica
 	public function listarTodosOrgenandoPor($coluna){
-		include("conexao.php");
+		include(CONEXAO_PATH);
 		$sql = 'SELECT * FROM cliente ORDER BY '.$coluna;
 		$consulta = $conexao->prepare($sql);
 		$consulta->execute();
@@ -48,7 +49,7 @@ class ClienteDAO{
 	
 	//Apaga um elemento da tabela
 	public function deletar($cod){
-		include("conexao.php");
+		include(CONEXAO_PATH);
 		$sql = 'DELETE FROM cliente WHERE cod = :cod';
 		$consulta = $conexao->prepare($sql);
 		$consulta->bindValue(":cod",$cod);
@@ -60,7 +61,7 @@ class ClienteDAO{
 	
 	//Insere um elemento na tabela
 	public function inserir($cliente){
-		include("conexao.php");
+		include(CONEXAO_PATH);
 		$sql = 'INSERT INTO cliente (cod, nome, numero, rua, telefone, bairro, cidade, email, senha, complemento, login) VALUES (:cod, :nome, :numero, :rua, :telefone, :bairro, :cidade, :email, :senha, :complemento, :login)';
 		$consulta = $conexao->prepare($sql);
 		$consulta->bindValue(':cod',$cliente->getCod()); 
@@ -92,7 +93,7 @@ class ClienteDAO{
 	
 	//Atualiza um elemento na tabela
 	public function atualizar($cliente){
-		include("conexao.php");
+		include(CONEXAO_PATH);
 		$sql = 'UPDATE cliente SET cod = :cod, nome = :nome, numero = :numero, rua = :rua, telefone = :telefone, bairro = :bairro, cidade = :cidade, email = :email, senha = :senha, complemento = :complemento, login = :login WHERE cod = :cod';
 		$consulta = $conexao->prepare($sql);
 		$consulta->bindValue(':cod',$cliente->getCod()); 
@@ -124,7 +125,7 @@ class ClienteDAO{
 
 	//Apaga todos os elementos da tabela
 	public function limparTabela(){
-		include("conexao.php");
+		include(CONEXAO_PATH);
 		$sql = 'DELETE FROM cliente';
 		$consulta = $conexao->prepare($sql);
 		if($consulta->execute())

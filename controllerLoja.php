@@ -3,7 +3,7 @@
 require_once ("include_dao.php");
 
 $botao = isset($_POST['botao']) ? $_POST['botao'] : "";
-$pesquisa = isset($_GET['pesquisa']) ?  $_GET['pesquisa'] : "";
+$pesquisa = isset($_GET['pesquisa']) ?  $_GET['pesquisa'] : ""; 
 
 $loja = new Loja();
 $lojaDAO = new LojaDAO();
