@@ -5,10 +5,11 @@ session_start();
 $botao = isset($_POST['botao']) ? $_POST['botao'] : "";
 $pesquisa = isset($_GET['pesquisa']) ?  $_GET['pesquisa'] : "";
 $action = isset($_GET['action']) ? $_GET['action'] : "";
+$id = isset($_GET['id']) ? $_GET['id'] : "";
 $cliente = new Cliente();
 $clienteDAO = new ClienteDAO();
 
-function testaSession(){
+function testaSession($id){
 	if (empty($_SESSION['usuario'])){
 
 		echo "
@@ -20,13 +21,16 @@ function testaSession(){
 	
 	else{
 		
-		echo"<script>window.location.href='lojas/index.html'</script>";
+		echo"<script>
+		document.getElementById('$id').submit();
+		</script>
+		";
 		
 	}
   }
 
   if ($action == 'testaSession') {
-    testaSession();
+    testaSession($id);
     exit;
 }
 

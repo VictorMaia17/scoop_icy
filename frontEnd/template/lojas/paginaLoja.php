@@ -47,13 +47,36 @@ require_once ("../../../controllerLoja.php");
 
 <body>
 
+  <?php
+    // Recebendo os dados enviados via POST
+    $cod = $_POST['cod'];
+    $nome = $_POST['nome'];
+    $cnpj = $_POST['cnpj'];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
+    $numero = $_POST['numero'];
+    $rua = $_POST['rua'];
+    $bairro = $_POST['bairro'];
+    $cidade = $_POST['cidade'];
+    $complemento = $_POST['complemento'];
+    $login = $_POST['login'];
+    $statusLoja = $_POST['statusLoja'];
+    $logo = $_POST['logo'];
+    $descricao = $_POST['descricao'];
+    $dias = $_POST['dias'];
+    $instagram = $_POST['instagram'];
+    $facebook = $_POST['facebook'];
+    $taxa_entrega = $_POST['taxa_entrega'];
+    $telefone = $_POST['telefone'];
+    ?>
+
   <div class="hero_area">
 
     <!-- header section strats -->
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="index.php">
             <span>
              <h1>Scoop Icy</h1>
             </span>
@@ -66,10 +89,10 @@ require_once ("../../../controllerLoja.php");
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
               <li class="nav-item active">
-                <a class="nav-link" href="index.php">Inicio<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="../index.php">Inicio<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="menu.html">Lojas</a>
+                <a class="nav-link" href="menu.php">Lojas</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="about.html">Sobre</a>
@@ -157,12 +180,12 @@ require_once ("../../../controllerLoja.php");
         
               <div class="col-md-6">
                 <div class="d-flex justify-content-left" class="rounded-circle" style="height: 100px; width: 100px;">
-                  <img src="../images/fiquebem (1).png">
+                  <img src="../../../lojas_logo/<?=$logo?>" id="logoLoja">
                 </div>
               </div>
               <div class="col-md-6">
-              <h3 style="color:white;">
-                Nossa açaideira
+              <h3 style="color:white;" id="nomeLoja">
+              <?php echo "$nome" ?>
               </h3>		
               </div>
 
@@ -173,8 +196,8 @@ require_once ("../../../controllerLoja.php");
         
         <div class="col-md-8">
           <div class="d-flex justify-content-end">
-            <h4 style="color:white;">
-              aberto hoje
+            <h4 style="color:white;" id="atendimentoLoja">
+            <?php echo "$dias" ?>
             </h6>
           </div>
 
@@ -183,8 +206,8 @@ require_once ("../../../controllerLoja.php");
             <div class="row">
   
               <div class="col-md-12 d-flex justify-content-end">
-                <h5 style="color: white;">
-                  taxa de entrega: R$ 2
+                <h5 style="color: white;" id="taxa_entregaLoja">
+                <?php echo "$taxa_entrega" ?>
                 </h5>
               </div>
   
@@ -199,14 +222,14 @@ require_once ("../../../controllerLoja.php");
       <div class="row">
 
         <div class="col-md-6">
-          <h5 style="color: white;">
-            telefone para contato: 88 9999 9999
+          <h5 style="color: white;" id="telefoneLoja">
+          <?php echo "$telefone" ?>
           </h5>
         </div>
 
         <div class="col-md-6 d-flex justify-content-end">
-          <h5 style="color: white;">
-            endereço: rua tal tal bairro tal tal cidade tal tal
+          <h5 style="color: white;" >
+            
           </h5>
         </div>
 
@@ -215,8 +238,8 @@ require_once ("../../../controllerLoja.php");
       <div class="row"> 
 
         <div class="col-md-6">
-          <h5 style="color: white;">
-            email para contato: aaa@aaa.a
+          <h5 style="color: white;" id="emailLoja">
+          <?php echo "$email" ?>
           </h5>
         </div>
 
@@ -708,23 +731,8 @@ require_once ("../../../controllerLoja.php");
   </footer>
   <!-- footer section -->
 
-   <!-- O Modal -->
-  <div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Se cadastre ou logue para comprar no nosso site!!!</p>
-
-      <a href="cadastrarCliente.php">Cadastrar</a>
-      <a href="loginCliente.php">Logar</a>
-  
-  </div>
-
-  </div>
-
-  <!-- MODAL -->
-  <script src="../../../js/modal.js"></script>
+  <!-- SCRIPT QUE RECEBE AS INFORMAÇÕES DA LOJA E PASSA PARA A PÁGINA DA LOJA -->
+  <script src="../informacoesLoja.js"></script>
   <!-- jQery -->
   <script src="../../../js/jquery-3.4.1.min.js"></script>
   <!-- popper js -->

@@ -12,7 +12,7 @@ $atendimentoDAO = new AtendimentoDAO();
 
 $lojas = $lojaDAO->listartodos();
 
-/*if (empty($pesquisa)){
+if (empty($pesquisa)){
 
 
 }			
@@ -22,7 +22,7 @@ else{
 	$lojas = $lojaDAO->pesquisar($pesquisa);
 
 }
-*/
+
 //login
 
 if($botao == "logar"){
@@ -37,7 +37,7 @@ if($botao == "logar"){
 	else{
 		session_start();
 		$_SESSION['usuario'] = $email;
-		header("location:index.html");
+		header("location:index.php");
 	}
 }
 
@@ -55,7 +55,7 @@ if($botao == "cadastrar"){
 		if ($name[1] == "jpg" || $name[1] == "png" || $name[1] == "jpeg"){
 			
 			$novoNome = "loja-".md5(time()*rand()).".".$name[1];
-			$destino = "lojas_logo/$novoNome";
+			$destino = "../../lojas_logo/$novoNome";
 			move_uploaded_file($logo["tmp_name"], $destino);
 			//var_dump($foto);
 		}
@@ -192,7 +192,7 @@ if($botao == "cadastrar"){
 	
 	else{
 
-		header("location:index.html");
+		header("location:index.php");
 
 	}
 }

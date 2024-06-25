@@ -1,7 +1,6 @@
 <?php
 
-require_once ("../../controllerLoja.php");
-include(__DIR__ . '/../../config/config.php');	
+require_once ("../../controllerLoja.php");	
 
 ?>
 <!DOCTYPE html>
@@ -38,10 +37,9 @@ include(__DIR__ . '/../../config/config.php');
 
 </head>
 
-<body>
+<body class="sub_page">
 
-  <div class="hero_area">
-
+  
     <!-- header section strats -->
     <header class="header_section">
       <div class="container">
@@ -137,236 +135,7 @@ include(__DIR__ . '/../../config/config.php');
       </div>
     </header>
     <!-- end header section -->
-    <!-- slider section -->
-    <section class="slider_section ">
-      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="container ">
-              <div class="row">
-                <div class="col-md-7 col-lg-6 ">
-                  <div class="detail-box">
-                    <h1>
-                      Scoop icy
-                    </h1>
-                    <p>
-                      <h4>
-                      Uma explosão de sabor que te leva para outra dimensão
-                      </h4>
-                    </p>
-                    <div class="btn-box">
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item ">
-            <div class="container ">
-              <div class="row">
-                <div class="col-md-7 col-lg-6 ">
-                  <div class="detail-box">
-                    <h1>
-                      Scoop icy
-                    </h1>
-                    <p>
-                      <h4>
-                      menu
-                    </h4>
-                    </p>
-                    <div class="btn-box">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="container ">
-              <div class="row">
-                <div class="col-md-7 col-lg-6 ">
-                  <div class="detail-box">
-                     <h1>
-                      Scoop icy
-                    </h1>
-    
-                    <p>
-                      <h4>
-                      Descubra o segredo do açaí irresistível!</h4>
-                    </p>
-                    <div class="btn-box">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <ol class="carousel-indicators">
-            <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
-            <li data-target="#customCarousel1" data-slide-to="1"></li>
-            <li data-target="#customCarousel1" data-slide-to="2"></li>
-          </ol>
-        </div>
-      </div>
-
-    </section>
-    <!-- end slider section -->
   </div>
-
-  <!-- offer section -->
-
-  <section class="offer_section layout_padding-bottom">
-    <div class="offer_container">
-      <div class="container ">
-        <div class="row">
-          <div class="col-md-6  ">
-            <div class="box ">
-              <div class="img-box">
-                <img src="images/15promo.jpg" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                 Promoção nas 3 primeiras compras
-                </h5>
-                <h6>
-                  <span>20%</span> Off
-                </h6>
-                <a href="">
-                   <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
-                    <g>
-                      <g>
-                        <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
-                     c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
-                      </g>
-                    </g>
-                    <g>
-                      <g>
-                        <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
-                     C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
-                     c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
-                     C457.728,97.71,450.56,86.958,439.296,84.91z" />
-                      </g>
-                    </g>
-                    <g>
-                      <g>
-                        <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
-                     c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
-                      </g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6  ">
-            <div class="box  ">
-              <div class="img-box">
-                <img src="images/PROMO.jpeg" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                 Entrega gratuita para pedidos acima de $30 reais
-                </h5>
-                <h6>
-                  <span></span> 
-                </h6>
-                <a href="">
-                  
-                   <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
-                    <g>
-                      <g>
-                        <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
-                     c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
-                      </g>
-                    </g>
-                    <g>
-                      <g>
-                        <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
-                     C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
-                     c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
-                     C457.728,97.71,450.56,86.958,439.296,84.91z" />
-                      </g>
-                    </g>
-                    <g>
-                      <g>
-                        <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
-                     c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
-                      </g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end offer section -->
 
   <!-- food section -->
 
@@ -484,86 +253,6 @@ include(__DIR__ . '/../../config/config.php');
 
   <!-- end food section -->
 
-  <!-- about section -->
-
-  <section class="about_section layout_padding">
-    <div class="container  ">
-
-      <div class="row">
-        <div class="col-md-6 ">
-          <div class="img-box">
-            <img src="images/logo.png" alt="">
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="detail-box">
-            <div class="heading_container">
-              <h2>
-                Nós somos Scoop Icy
-              </h2>
-            </div>
-            <p>
-              Somos Scoop Icy, uma empresa direcionada especificamente as açaiterias, onde nossa principal intenção é levar os produtos até os clientes com rapidez e qualidade. Visando o conforto dos clientes e a praticidade na entrega dos produtos das lojas alocadas por nós.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="client_section layout_padding-bottom">
-    <div class="container">
-      <div class="heading_container heading_center psudo_white_primary mb_45">
-        <h2>
-          Quem somos nós?
-        </h2>
-      </div>
-      <div class="carousel-wrap row ">
-        <div class="owl-carousel client_owl-carousel">
-          <div class="item">
-            <div class="box">
-              <div class="detail-box">
-                <p>
-                  Somos alunos da EP Osmira Eduardo de Castro, cursando o 3° ano do curso técnico em informática. Este site é um trabalho direcionado as disciplinas de Gestão de Startups e Laboratório de Software.
-                </p>
-             
-              </div>
-              <div class="row" >
-                <div class="col">
-                  <center><img src="images/keiliane.jpg" style="border: solid  0.3em #FDCAE5 ; border-radius: 100px;  width: 125px; height: 125px; object-fit: contain; "></center>
-                </div>
-                <div class="col">
-                  <center><img src="images/tamires.png" style="border: solid  0.3em #FDCAE5 ; border-radius: 100px;  width: 125px; height: 125px; object-fit: contain;"></center>
-                </div>
-            </div>
-            </div>
-          </div>
-          
-          <div class="item">
-            <div class="box">
-              <div class="detail-box">
-                <p>
-                  Somos uma empresa fictícia de um site de vendas de açaí. Tivemos a ideia de criarmos esse site com intuito de resolver um problema da nossa cidade relacionado com a facilitação das entregas de açaí.
-                </p>
-                
-              </div>
-              <div class="row" >
-                <div class="col">
-                  <center><img src="images/vitor (1).png" style="border: solid  0.3em #FDCAE5 ; border-radius: 100px;  width: 125px; height: 125px; object-fit: contain; "></center>
-                </div>
-                <div class="col">
-                  <center><img src="images/gabriel.png.png" style="border: solid  0.3em #FDCAE5 ; border-radius: 100px;  width: 125px; height: 125px; object-fit: contain;"></center>
-                </div>
-            </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end client section -->
-
   <!-- footer section -->
   <footer class="footer_section">
     <div class="container">
@@ -574,17 +263,20 @@ include(__DIR__ . '/../../config/config.php');
               Contatos
             </h4>
             <div class="contact_link_box">
-              
+              <a href="">
+                
+                
+              </a>
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                 Telefone +55 94002-8922
+                  telefone +55 940028922
                 </span>
               </a>
               <a href="">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
-                  scoopicy@gmail.com
+                 scoopicy@gmail.com
                 </span>
               </a>
             </div>
@@ -596,7 +288,7 @@ include(__DIR__ . '/../../config/config.php');
               Scoop Icy
             </a>
             <p>
-              Você também pode entrar em contato com nós pelas nossas redes sociais 
+              Você também pode entrar em contato com nós pelas nossas redes sociais
             </p>
             <div class="footer_social">
               <a href="https://www.facebook.com/profile.php?id=61557925204934&locale=pt_BR">
@@ -618,13 +310,14 @@ include(__DIR__ . '/../../config/config.php');
           <p>
             Domingo a Domingo
           </p>
+         
         </div>
       </div>
       <div class="footer-info">
         <p>
           <span id="displayYear"></span> 
           <a href="https://html.design/"></a><br><br>
-           <span id="displayYear"></span>
+           <span id="displayYear"></span> 
           <a href="https://themewagon.com/" target="_blank"></a>
         </p>
       </div>
@@ -632,23 +325,6 @@ include(__DIR__ . '/../../config/config.php');
   </footer>
   <!-- footer section -->
 
-   <!-- O Modal -->
-  <div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Se cadastre ou logue para comprar no nosso site!!!</p>
-
-      <a href="cadastrarCliente.php">Cadastrar</a>
-      <a href="loginCliente.php">Logar</a>
-  
-  </div>
-
-  </div>
-
-  <!-- MODAL -->
-  <script src="../../js/modal.js"></script>
   <!-- jQery -->
   <script src="js/jquery-3.4.1.min.js"></script>
   <!-- popper js -->

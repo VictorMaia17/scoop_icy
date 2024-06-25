@@ -24,15 +24,14 @@ window.onclick = function(event) {
   }
 }
 
-function chamarTestaSession(event) {
+function chamarTestaSession(event, id) {
   event.preventDefault();
     $.ajax({
         url: '../../controllerCliente.php',
         type: 'GET',
-        data: { action: 'testaSession' },
+        data: { action: 'testaSession', id: id },
         dataType: 'html',
-        success: function(response) {
-
+        success: function(response) { 
           $('body').append(response);
             
         },

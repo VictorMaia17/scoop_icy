@@ -9,4 +9,7 @@ if (!defined("CONEXAO_PATH")){
 define('CONEXAO_PATH', BASE_PATH . '/conexao.php');
 }
 
+if (!defined("LOJASLOGO_PATH")){
+    define('LOJASLOGO_PATH', BASE_PATH . '/lojas_logo/');
+    }
 ?>
