@@ -150,9 +150,7 @@ include(__DIR__ . '/../../config/config.php');
                       Scoop icy
                     </h1>
                     <p>
-                      <h4>
-                      Uma explosão de sabor que te leva para outra dimensão
-                      </h4>
+                      um é pouco, dois ta bom e açai é DEMAIS
                     </p>
                     <div class="btn-box">
                       
@@ -187,13 +185,19 @@ include(__DIR__ . '/../../config/config.php');
               <div class="row">
                 <div class="col-md-7 col-lg-6 ">
                   <div class="detail-box">
-                     <h1>
+                    <style>
+                      p {font: size 500px;
+                      }
+                    </style>
+                    
+                     <p>
                       Scoop icy
-                    </h1>
-    
+                     </p>
+                   
+                  </p>
                     <p>
                       <h4>
-                      Descubra o segredo do açaí irresistível!</h4>
+                     30% OFF NAS 3 PRIMEIRAS COMPRAS</h4>
                     </p>
                     <div class="btn-box">
                     </div>
@@ -528,14 +532,12 @@ include(__DIR__ . '/../../config/config.php');
                 </p>
              
               </div>
-              <div class="row" >
-                <div class="col">
-                  <center><img src="images/keiliane.jpg" style="border: solid  0.3em #FDCAE5 ; border-radius: 100px;  width: 125px; height: 125px; object-fit: contain; "></center>
-                </div>
-                <div class="col">
-                  <center><img src="images/tamires.png" style="border: solid  0.3em #FDCAE5 ; border-radius: 100px;  width: 125px; height: 125px; object-fit: contain;"></center>
-                </div>
-            </div>
+              <div class="img-box">
+                <img src="images/tamires.png" alt="" class="box-img">
+              </div>
+              <div class="img-box">
+                <img src="images/keiliane.png" alt="" class="box-img">
+              </div>
             </div>
           </div>
           
@@ -547,14 +549,12 @@ include(__DIR__ . '/../../config/config.php');
                 </p>
                 
               </div>
-              <div class="row" >
-                <div class="col">
-                  <center><img src="images/vitor (1).png" style="border: solid  0.3em #FDCAE5 ; border-radius: 100px;  width: 125px; height: 125px; object-fit: contain; "></center>
-                </div>
-                <div class="col">
-                  <center><img src="images/gabriel.png.png" style="border: solid  0.3em #FDCAE5 ; border-radius: 100px;  width: 125px; height: 125px; object-fit: contain;"></center>
-                </div>
-            </div>
+              <div class="img-box">
+                <img src="images/vitor.png" alt="" class="box-img">
+              </div>
+              <div class="img-box">
+                <img src="images/gabriel.png" alt="" class="box-img">
+              </div>
             </div>
           </div>
         </div>
