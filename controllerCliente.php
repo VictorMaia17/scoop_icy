@@ -94,7 +94,7 @@ else if($botao == "cadastrar"){
 	if($origem == "cadastrarCliente"){
 
 		header("location:index.php");
-		
+
 	} 
 	
 	else{

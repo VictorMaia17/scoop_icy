@@ -168,11 +168,13 @@ include(__DIR__ . '/../../config/config.php');
                     <h1>
                       Scoop icy
                     </h1>
-                    <p>
-                      <h4>
-                      menu
-                    </h4>
-                    </p>
+                    <a href="cadastrarLoja.php">
+                      <p>
+                        <h4>
+                          cadastre já a sua loja!!!
+                        </h4>
+                      </p>
+                    </a>
                     <div class="btn-box">
                     </div>
                   </div>
@@ -532,12 +534,14 @@ include(__DIR__ . '/../../config/config.php');
                 </p>
              
               </div>
-              <div class="img-box">
-                <img src="images/tamires.png" alt="" class="box-img">
-              </div>
-              <div class="img-box">
-                <img src="images/keiliane.png" alt="" class="box-img">
-              </div>
+              <div class="row" >
+                <div class="col">
+                  <center><img src="images/keiliane.jpg" style="border: solid  0.3em #FDCAE5 ; border-radius: 100px;  width: 125px; height: 125px; object-fit: contain; "></center>
+                </div>
+                <div class="col">
+                  <center><img src="images/tamires.png" style="border: solid  0.3em #FDCAE5 ; border-radius: 100px;  width: 125px; height: 125px; object-fit: contain;"></center>
+                </div>
+            </div>
             </div>
           </div>
           
@@ -549,18 +553,21 @@ include(__DIR__ . '/../../config/config.php');
                 </p>
                 
               </div>
-              <div class="img-box">
-                <img src="images/vitor.png" alt="" class="box-img">
-              </div>
-              <div class="img-box">
-                <img src="images/gabriel.png" alt="" class="box-img">
-              </div>
+              <div class="row" >
+                <div class="col">
+                  <center><img src="images/vitor.png" style="border: solid  0.3em #FDCAE5 ; border-radius: 100px;  width: 125px; height: 125px; object-fit: contain; "></center>
+                </div>
+                <div class="col">
+                  <center><img src="images/gabriel.png" style="border: solid  0.3em #FDCAE5 ; border-radius: 100px;  width: 125px; height: 125px; object-fit: contain;"></center>
+                </div>
+            </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
 
   <!-- end client section -->
 
@@ -605,7 +612,7 @@ include(__DIR__ . '/../../config/config.php');
               <a href="https://x.com/Scoop_icy">
                 <i class="fa fa-twitter" aria-hidden="true"></i>
               </a>
-              <a href="https://www.instagram.com/scoop.icy/">
+              <a href="https://www.instagram.com/scoop__icy/?next=%2F">
                 <i class="fa fa-instagram" aria-hidden="true"></i>
               </a>
             </div>
